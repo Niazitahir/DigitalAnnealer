@@ -1,9 +1,8 @@
 `define ENABLE_HPS
 module DE1_SOCTop(
-
-//VERSÃO COM O CLOCK DO HPS ALTERADA PARA 925.
-//NECESSÁRIO ALTERAR NO QSYS PARA 800, GERAR O HDL, E ACTUALIZA-LO NESTE DESIGN
-
+      
+		///////// CLOCK /////////
+      input              CLOCK_50,
       ///////// CLOCK2 /////////
       input              CLOCK2_50,
 
@@ -13,8 +12,6 @@ module DE1_SOCTop(
       ///////// CLOCK4 /////////
       input              CLOCK4_50,
 
-      ///////// CLOCK /////////
-      input              CLOCK_50,
 
 `ifdef ENABLE_HPS
       ///////// HPS /////////

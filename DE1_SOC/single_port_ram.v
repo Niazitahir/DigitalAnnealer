@@ -1,5 +1,16 @@
-// Quartus Prime Verilog Template
-// Single port RAM with single read/write address 
+
+//This works similar to ram, communicating with the CPU to exchange information. However: 
+
+//Function 1: Import information
+//Function 1.5: Pipe imported information into DSP
+//Function 2: DSP multiplies 2 shorts together
+//Function 3: Save information and send back when requested. 
+
+//Format: h2f bridge is 128 bits. This will fit 128 / 16 bits (len of short) = 8 shorts. Each transmission will therefore send 8 numbers
+//this allows for 4 dsps to work in parallel. 
+
+//Note: Considering splitting data 3/4 into DDR on HPS and 1/4 on SDRAM. This will allow for more parallelism with the caveat of 
+//slower initialization in the beginning (moving data into SDRAM from the processor)
 
 module single_port_ram 
 #(parameter DATA_WIDTH=8, parameter ADDR_WIDTH=6)
