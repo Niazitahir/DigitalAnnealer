@@ -1,5 +1,5 @@
 Flow report for DE1_SOC
-Mon Jan 19 02:36:42 2026
+Mon Jan 19 23:38:50 2026
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Mon Jan 19 02:36:17 2026           ;
+; Flow Status                     ; Successful - Mon Jan 19 23:38:25 2026           ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                   ; DE1_SOC                                         ;
 ; Top-level Entity Name           ; DE1_SOCTop                                      ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 616 / 32,070 ( 2 % )                            ;
-; Total registers                 ; 776                                             ;
-; Total pins                      ; 124 / 457 ( 27 % )                              ;
+; Logic utilization (in ALMs)     ; 988 / 32,070 ( 3 % )                            ;
+; Total registers                 ; 1379                                            ;
+; Total pins                      ; 182 / 457 ( 40 % )                              ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 1,536 / 4,065,280 ( < 1 % )                     ;
+; Total block memory bits         ; 1,024 / 4,065,280 ( < 1 % )                     ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/19/2026 02:32:05 ;
+; Start date & time ; 01/19/2026 23:33:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SOC             ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------+-----------------------------------------------------------------------+---------------+-----------------------------+------------+
 ; Assignment Name                       ; Value                                                                 ; Default Value ; Entity Name                 ; Section Id ;
 +---------------------------------------+-----------------------------------------------------------------------+---------------+-----------------------------+------------+
-; COMPILER_SIGNATURE_ID                 ; 93181000686530.176880792102892                                        ; --            ; --                          ; --         ;
+; COMPILER_SIGNATURE_ID                 ; 93181000679155.176888362303132                                        ; --            ; --                          ; --         ;
 ; ECO_REGENERATE_REPORT                 ; On                                                                    ; Off           ; --                          ; --         ;
 ; HPS_ISW_FILE                          ; DE1_SOC/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; DE1_SOC_hps_0_hps_io_border ; --         ;
 ; HPS_ISW_FILE                          ; DE1_SOC/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; DE1_SOC_hps_0_hps_io_border ; --         ;
@@ -120,7 +120,7 @@ refer to the applicable agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION         ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                 ; --            ; --                          ; --         ;
 ; SLD_FILE                              ; DE1_SOC/synthesis/DE1_SOC.regmap                                      ; --            ; --                          ; --         ;
 ; SLD_FILE                              ; DE1_SOC/synthesis/DE1_SOC.debuginfo                                   ; --            ; --                          ; --         ;
-; SLD_INFO                              ; QSYS_NAME DE1_SOC HAS_SOPCINFO 1 GENERATION_ID 1768805941             ; --            ; --                          ; --         ;
+; SLD_INFO                              ; QSYS_NAME DE1_SOC HAS_SOPCINFO 1 GENERATION_ID 1768883349             ; --            ; --                          ; --         ;
 ; SOPCINFO_FILE                         ; DE1_SOC/synthesis/../../DE1_SOC.sopcinfo                              ; --            ; --                          ; --         ;
 ; SYNTHESIS_ONLY_QIP                    ; On                                                                    ; --            ; --                          ; --         ;
 ; TOP_LEVEL_ENTITY                      ; DE1_SOCTop                                                            ; DE1_SOC       ; --                          ; --         ;
@@ -133,11 +133,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:29     ; 1.0                     ; 5039 MB             ; 00:00:48                           ;
-; Fitter               ; 00:01:14     ; 1.1                     ; 7686 MB             ; 00:02:57                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4873 MB             ; 00:00:09                           ;
-; Timing Analyzer      ; 00:00:23     ; 1.2                     ; 5631 MB             ; 00:00:26                           ;
-; Total                ; 00:02:15     ; --                      ; --                  ; 00:04:20                           ;
+; Analysis & Synthesis ; 00:00:34     ; 1.0                     ; 5104 MB             ; 00:00:53                           ;
+; Fitter               ; 00:01:33     ; 1.1                     ; 7691 MB             ; 00:05:18                           ;
+; Assembler            ; 00:00:10     ; 1.0                     ; 4880 MB             ; 00:00:10                           ;
+; Timing Analyzer      ; 00:00:24     ; 1.2                     ; 5643 MB             ; 00:00:29                           ;
+; Total                ; 00:02:41     ; --                      ; --                  ; 00:06:50                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -146,10 +146,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; BA3135WS27       ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; BA3135WS27       ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; BA3135WS27       ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; BA3135WS27       ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; BA3135WS26       ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; BA3135WS26       ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; BA3135WS26       ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; BA3135WS26       ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

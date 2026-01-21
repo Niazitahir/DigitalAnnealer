@@ -9,6 +9,59 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element HEX3_0
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element HEX3_0.s1
+   {
+      datum baseAddress
+      {
+         value = "8192";
+         type = "String";
+      }
+   }
+   element HEX5_4
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element HEX5_4.s1
+   {
+      datum baseAddress
+      {
+         value = "12288";
+         type = "String";
+      }
+   }
+   element LEDS
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element LEDS.s1
+   {
+      datum baseAddress
+      {
+         value = "4096";
+         type = "String";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -39,6 +92,14 @@
       {
          value = "131072";
          type = "String";
+      }
+   }
+   element reset_bridge_0
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
       }
    }
    element single_port_ram_0
@@ -80,11 +141,73 @@
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
+   name="hex30"
+   internal="HEX3_0.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="hex54"
+   internal="HEX5_4.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
    name="hps_0_h2f_mpu_events"
    internal="hps_0.h2f_mpu_events"
    type="conduit"
    dir="end" />
+ <interface
+   name="leds"
+   internal="LEDS.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
+ <interface
+   name="reset_bridge_0_out_reset_1"
+   internal="reset_bridge_0.out_reset_1"
+   type="reset"
+   dir="start" />
+ <module name="HEX3_0" kind="altera_avalon_pio" version="18.0" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module name="HEX5_4" kind="altera_avalon_pio" version="18.0" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="16" />
+ </module>
+ <module name="LEDS" kind="altera_avalon_pio" version="18.0" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="10" />
+ </module>
  <module name="clk_0" kind="clock_source" version="18.0" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -641,6 +764,17 @@
   <parameter name="writeIRQThreshold" value="8" />
  </module>
  <module
+   name="reset_bridge_0"
+   kind="altera_reset_bridge"
+   version="18.0"
+   enabled="1">
+  <parameter name="ACTIVE_LOW_RESET" value="0" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="NUM_RESET_OUTPUTS" value="2" />
+  <parameter name="SYNCHRONOUS_EDGES" value="deassert" />
+  <parameter name="USE_RESET_REQUEST" value="0" />
+ </module>
+ <module
    name="single_port_ram_0"
    kind="single_port_ram"
    version="1.0"
@@ -683,6 +817,33 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
+   kind="avalon"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="HEX5_4.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x3000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="HEX3_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="LEDS.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x1000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
    kind="clock"
    version="18.0"
    start="clk_0.clk"
@@ -697,6 +858,26 @@
    version="18.0"
    start="sys_sdram_pll_0.sys_clk"
    end="jtag_uart_0.clk" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="sys_sdram_pll_0.sys_clk"
+   end="LEDS.clk" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="sys_sdram_pll_0.sys_clk"
+   end="HEX3_0.clk" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="sys_sdram_pll_0.sys_clk"
+   end="HEX5_4.clk" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="sys_sdram_pll_0.sys_clk"
+   end="reset_bridge_0.clk" />
  <connection
    kind="clock"
    version="18.0"
@@ -721,22 +902,57 @@
    kind="reset"
    version="18.0"
    start="clk_0.clk_reset"
+   end="reset_bridge_0.in_reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
    end="sys_sdram_pll_0.ref_reset" />
  <connection
    kind="reset"
    version="18.0"
    start="hps_0.h2f_reset"
+   end="reset_bridge_0.in_reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="reset_bridge_0.out_reset"
    end="clk_0.clk_in_reset" />
  <connection
    kind="reset"
    version="18.0"
-   start="hps_0.h2f_reset"
+   start="reset_bridge_0.out_reset"
+   end="sys_sdram_pll_0.ref_reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="reset_bridge_0.out_reset"
+   end="HEX5_4.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="reset_bridge_0.out_reset"
+   end="HEX3_0.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="reset_bridge_0.out_reset"
+   end="LEDS.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="reset_bridge_0.out_reset"
+   end="single_port_ram_0.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="reset_bridge_0.out_reset"
    end="jtag_uart_0.reset" />
  <connection
    kind="reset"
    version="18.0"
-   start="hps_0.h2f_reset"
-   end="single_port_ram_0.reset" />
+   start="sys_sdram_pll_0.reset_source"
+   end="reset_bridge_0.in_reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

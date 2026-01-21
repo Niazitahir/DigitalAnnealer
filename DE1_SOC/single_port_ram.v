@@ -18,9 +18,12 @@ module single_port_ram
 	input [(DATA_WIDTH-1):0] data,
 	input [(ADDR_WIDTH-1):0] addr,
 	input we, clk, reset_n,
-	output [(DATA_WIDTH-1):0] q
+	output [(DATA_WIDTH-1):0] q,
+	output [9:0] leds,
+	output [31:0] hex0,
+	output [15:0] hex1
 );
-
+	reg [9:0] led_arr;
 	// Declare the RAM variable
 	reg [DATA_WIDTH-1:0] ram[2**ADDR_WIDTH-1:0];
 
@@ -29,23 +32,28 @@ module single_port_ram
 
 	always @ (posedge clk or negedge reset_n)
 	begin
-	
+		
 		if (!reset_n) begin
 			addr_reg <= {ADDR_WIDTH{1'b0}};
+			led_arr <= {10'b1111111111};
 		end
 		// Write
 		else begin
-			if (we)
+		   led_arr <= {10'b1100000000};
+			if (we) begin
+				led_arr <= {10'b1100000111};
 				ram[addr] <= data;
-
 			addr_reg <= addr;
+			end
 		end
 	end
 
 	// Continuous assignment implies read returns NEW data.
 	// This is the natural behavior of the TriMatrix memory
 	// blocks in Single Port mode.  
-	assign q = {2**ADDR_WIDTH-1{1'b0}};
+	assign q = 16'b1111111111111111;
+	assign hex0 = 32'b1111111111111111111111111111111;
+	assign leds = led_arr;
 	//assign q = ram[addr_reg];
 
 endmodule

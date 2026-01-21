@@ -1,9 +1,11 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
 preplace inst DE1_SOC.hps_0.l3regs -pg 1
+preplace inst DE1_SOC.HEX3_0 -pg 1 -lvl 3 -y 210
 preplace inst DE1_SOC.hps_0.axi_ocram -pg 1
 preplace inst DE1_SOC.hps_0.bridges -pg 1
-preplace inst DE1_SOC.hps_0 -pg 1 -lvl 2 -y 140
+preplace inst DE1_SOC.hps_0 -pg 1 -lvl 2 -y 90
+preplace inst DE1_SOC.HEX5_4 -pg 1 -lvl 3 -y 310
 preplace inst DE1_SOC.hps_0.sdrctl -pg 1
 preplace inst DE1_SOC.hps_0.uart0 -pg 1
 preplace inst DE1_SOC.hps_0.L2 -pg 1
@@ -24,23 +26,25 @@ preplace inst DE1_SOC.sys_sdram_pll_0.sys_pll -pg 1
 preplace inst DE1_SOC.hps_0.timer -pg 1
 preplace inst DE1_SOC.hps_0.nand0 -pg 1
 preplace inst DE1_SOC.hps_0.i2c2 -pg 1
-preplace inst DE1_SOC.clk_0 -pg 1 -lvl 3 -y 400
+preplace inst DE1_SOC.clk_0 -pg 1 -lvl 3 -y 430
 preplace inst DE1_SOC.hps_0.i2c3 -pg 1
 preplace inst DE1_SOC.hps_0.gpio0 -pg 1
 preplace inst DE1_SOC.hps_0.rstmgr -pg 1
 preplace inst DE1_SOC.hps_0.f2s_sdram_ref_clk -pg 1
 preplace inst DE1_SOC.sys_sdram_pll_0 -pg 1 -lvl 1 -y 50
-preplace inst DE1_SOC.jtag_uart_0 -pg 1 -lvl 3 -y 80
+preplace inst DE1_SOC.jtag_uart_0 -pg 1 -lvl 3 -y 30
 preplace inst DE1_SOC.hps_0.qspi -pg 1
 preplace inst DE1_SOC.hps_0.gpio1 -pg 1
 preplace inst DE1_SOC.hps_0.hps_io -pg 1
 preplace inst DE1_SOC.hps_0.fpga_interfaces -pg 1
+preplace inst DE1_SOC.LEDS -pg 1 -lvl 3 -y 490
 preplace inst DE1_SOC.hps_0.gpio2 -pg 1
 preplace inst DE1_SOC.hps_0.timer0 -pg 1
 preplace inst DE1_SOC.hps_0.sysmgr -pg 1
 preplace inst DE1_SOC.hps_0.arm_gic_0 -pg 1
 preplace inst DE1_SOC.hps_0.arm_a9_0 -pg 1
 preplace inst DE1_SOC.sys_sdram_pll_0.reset_from_locked -pg 1
+preplace inst DE1_SOC.single_port_ram_0 -pg 1 -lvl 3 -y 130
 preplace inst DE1_SOC.hps_0.dcan0 -pg 1
 preplace inst DE1_SOC.hps_0.spim0 -pg 1
 preplace inst DE1_SOC.hps_0.timer1 -pg 1
@@ -57,14 +61,18 @@ preplace inst DE1_SOC.hps_0.axi_sdram -pg 1
 preplace inst DE1_SOC.hps_0.gmac1 -pg 1
 preplace inst DE1_SOC.hps_0.usb1 -pg 1
 preplace inst DE1_SOC.hps_0.timer3 -pg 1
-preplace netloc POINT_TO_POINT<net_container>DE1_SOC</net_container>(SLAVE)sys_sdram_pll_0.ref_reset,(MASTER)clk_0.clk_reset) 1 0 4 190 390 NJ 340 NJ 340 1040
-preplace netloc POINT_TO_POINT<net_container>DE1_SOC</net_container>(SLAVE)sys_sdram_pll_0.ref_clk,(MASTER)clk_0.clk) 1 0 4 170 370 NJ 360 NJ 360 1020
-preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)DE1_SOC.clk,(SLAVE)clk_0.clk_in) 1 0 3 NJ 410 NJ 410 NJ
-preplace netloc FAN_OUT<net_container>DE1_SOC</net_container>(MASTER)hps_0.h2f_reset,(SLAVE)clk_0.clk_in_reset,(SLAVE)jtag_uart_0.reset) 1 2 1 820
-preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)DE1_SOC.hps_0_h2f_mpu_events,(SLAVE)hps_0.h2f_mpu_events) 1 0 2 NJ 270 NJ
-preplace netloc FAN_OUT<net_container>DE1_SOC</net_container>(SLAVE)hps_0.f2h_axi_clock,(SLAVE)jtag_uart_0.clk,(SLAVE)hps_0.h2f_lw_axi_clock,(MASTER)sys_sdram_pll_0.sys_clk,(SLAVE)hps_0.h2f_axi_clock) 1 1 2 470 100 780
+preplace netloc POINT_TO_POINT<net_container>DE1_SOC</net_container>(MASTER)clk_0.clk_reset,(SLAVE)sys_sdram_pll_0.ref_reset) 1 0 4 190 420 NJ 420 NJ 420 1070
+preplace netloc FAN_OUT<net_container>DE1_SOC</net_container>(SLAVE)LEDS.clk,(SLAVE)HEX3_0.clk,(SLAVE)single_port_ram_0.clock,(MASTER)sys_sdram_pll_0.sys_clk,(SLAVE)hps_0.h2f_lw_axi_clock,(SLAVE)jtag_uart_0.clk,(SLAVE)hps_0.h2f_axi_clock,(SLAVE)hps_0.f2h_axi_clock,(SLAVE)HEX5_4.clk) 1 1 2 450 50 780
+preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)hps_0.memory,(SLAVE)DE1_SOC.memory) 1 0 2 NJ 280 NJ
+preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)DE1_SOC.clk,(SLAVE)clk_0.clk_in) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc FAN_OUT<net_container>DE1_SOC</net_container>(SLAVE)LEDS.reset,(SLAVE)HEX5_4.reset,(SLAVE)jtag_uart_0.reset,(MASTER)hps_0.h2f_reset,(SLAVE)HEX3_0.reset,(SLAVE)clk_0.clk_in_reset,(SLAVE)single_port_ram_0.reset) 1 2 1 840
+preplace netloc POINT_TO_POINT<net_container>DE1_SOC</net_container>(MASTER)hps_0.h2f_axi_master,(SLAVE)single_port_ram_0.avalon_slave_0) 1 2 1 N
+preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)LEDS.external_connection,(SLAVE)DE1_SOC.leds) 1 0 3 NJ 520 NJ 520 NJ
+preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)HEX5_4.external_connection,(SLAVE)DE1_SOC.hex54) 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)DE1_SOC.hps_0_h2f_mpu_events,(SLAVE)hps_0.h2f_mpu_events) 1 0 2 NJ 220 NJ
+preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)HEX3_0.external_connection,(SLAVE)DE1_SOC.hex30) 1 0 3 NJ 300 NJ 290 NJ
+preplace netloc POINT_TO_POINT<net_container>DE1_SOC</net_container>(MASTER)clk_0.clk,(SLAVE)sys_sdram_pll_0.ref_clk) 1 0 4 170 600 NJ 600 NJ 600 1050
+preplace netloc FAN_OUT<net_container>DE1_SOC</net_container>(SLAVE)LEDS.s1,(MASTER)hps_0.h2f_lw_axi_master,(SLAVE)HEX5_4.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)HEX3_0.s1) 1 2 1 820
 preplace netloc POINT_TO_POINT<net_container>DE1_SOC</net_container>(SLAVE)hps_0.f2h_sdram0_clock,(MASTER)sys_sdram_pll_0.sdram_clk) 1 1 1 430
-preplace netloc POINT_TO_POINT<net_container>DE1_SOC</net_container>(MASTER)hps_0.h2f_lw_axi_master,(SLAVE)jtag_uart_0.avalon_jtag_slave) 1 2 1 800
-preplace netloc EXPORT<net_container>DE1_SOC</net_container>(SLAVE)DE1_SOC.memory,(SLAVE)hps_0.memory) 1 0 2 NJ 350 NJ
-levelinfo -pg 1 0 140 1080
-levelinfo -hier DE1_SOC 150 270 590 850 1060
+levelinfo -pg 1 0 140 1110
+levelinfo -hier DE1_SOC 150 270 590 880 1090

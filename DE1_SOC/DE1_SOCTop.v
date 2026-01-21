@@ -48,13 +48,20 @@ module DE1_SOCTop(
 		output 		[5:0] fpga_addr,
 		output 				fpga_we,
 		input 		[7:0] fpga_q,
-		output 		[7:0] fpga_data
-		
-
+		output 		[7:0] fpga_data,
+		////////  Debug  ////////
+		output [9:0] leds,
+		output [31:0] hex0,
+		output [15:0] hex1
 );
 
-
-
+	wire [9:0] fpga_leds;
+	wire [31:0] fpga_hex0;
+	wire [15:0] fpga_hex1;
+	assign LEDR = fpga_leds;
+	assign {HEX3, HEX2, HEX1, HEX0} = fpga_hex0;
+	assign {HEX5, HEX4} = fpga_hex1;
+	wire hps_fpga_reset_n; // Declare the wire
     DE1_SOC u0 (
 	 	  .clk_clk 										  (CLOCK_50),
         .memory_mem_a                          ( HPS_DDR3_ADDR),                          //          memory.mem_a
@@ -73,14 +80,22 @@ module DE1_SOCTop(
         .memory_mem_odt                        ( HPS_DDR3_ODT),                        //                .mem_odt
         .memory_mem_dm                         ( HPS_DDR3_DM),                         //                .mem_dm
         .memory_oct_rzqin                      ( HPS_DDR3_RZQ),                      //                .oct_rzqin
-       		
-    );
+		  .leds_export                     (leds),                     //                 leds.export
+        .hex30_export                    (hex0),                    //                hex30.export
+        .hex54_export                    (hex1),
+		  .reset_bridge_0_out_reset_1_reset (hps_fpga_reset_n),
+		
+	 );
 	single_port_ram u1(
 		.clk												  (CLOCK_50),
 		.data												  (fpga_data),
 		.addr												  (fpga_addr),
 		.we												  (fpga_we), 
-		.q													  (fpga_q)
+		.q													  (fpga_q),
+		.leds												  (fpga_leds),
+		.hex0												  (fpga_hex0),
+		.hex1												  (fpga_hex1),
+		.reset_n											  (hps_fpga_reset_n)
 	);
 
 
