@@ -24,7 +24,9 @@ module DE1_SOC (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_bridge_0_out_reset_1_reset);	
+	keys_export,
+	sys_sdram_pll_0_ref_reset_reset,
+	reset_reset_n);	
 
 	input		clk_clk;
 	output	[31:0]	hex30_export;
@@ -50,5 +52,7 @@ module DE1_SOC (
 	output		memory_mem_odt;
 	output		memory_mem_dm;
 	input		memory_oct_rzqin;
-	output		reset_bridge_0_out_reset_1_reset;
+	input	[3:0]	keys_export;
+	input		sys_sdram_pll_0_ref_reset_reset;
+	input		reset_reset_n;
 endmodule

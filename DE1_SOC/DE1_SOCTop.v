@@ -83,7 +83,7 @@ module DE1_SOCTop(
 		  .leds_export                     (leds),                     //                 leds.export
         .hex30_export                    (hex0),                    //                hex30.export
         .hex54_export                    (hex1),
-		  .reset_bridge_0_out_reset_1_reset (hps_fpga_reset_n),
+		  .keys_export(KEY)
 		
 	 );
 	single_port_ram u1(
@@ -94,8 +94,7 @@ module DE1_SOCTop(
 		.q													  (fpga_q),
 		.leds												  (fpga_leds),
 		.hex0												  (fpga_hex0),
-		.hex1												  (fpga_hex1),
-		.reset_n											  (hps_fpga_reset_n)
+		.hex1												  (fpga_hex1)
 	);
 
 

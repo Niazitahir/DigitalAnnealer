@@ -73,23 +73,23 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 CHIP  "DE1_SOC"  ASSIGNED TO AN: 5CSEMA5F31C6
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A2        : gnd    :                   :         :           :                
-hex0[13]                     : A3        : output : 2.5 V             :         : 8A        : N              
-hex0[7]                      : A4        : output : 2.5 V             :         : 8A        : N              
-hex1[8]                      : A5        : output : 2.5 V             :         : 8A        : N              
-leds[7]                      : A6        : output : 2.5 V             :         : 8A        : N              
+leds[4]                      : A3        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8A        :                
+HPS_DDR3_DQS_P[2]            : A5        : bidir  : 2.5 V             :         : 8A        : N              
+hex0[9]                      : A6        : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : A7        : power  :                   : 2.5V    : 8A        :                
-leds[1]                      : A8        : output : 2.5 V             :         : 8A        : N              
-hex0[9]                      : A9        : output : 2.5 V             :         : 8A        : N              
-hex1[3]                      : A10       : output : 2.5 V             :         : 8A        : N              
-hex0[25]                     : A11       : output : 2.5 V             :         : 8A        : N              
+hex0[0]                      : A8        : output : 2.5 V             :         : 8A        : N              
+hex0[28]                     : A9        : output : 2.5 V             :         : 8A        : N              
+hex1[7]                      : A10       : output : 2.5 V             :         : 8A        : N              
+hex1[10]                     : A11       : output : 2.5 V             :         : 8A        : N              
 GND                          : A12       : gnd    :                   :         :           :                
-hex0[11]                     : A13       : output : 2.5 V             :         : 8A        : N              
+hex0[15]                     : A13       : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :         : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A16       :        :                   :         : 7C        :                
@@ -117,25 +117,25 @@ VCCA_FPLL                    : AA8       : power  :                   : 2.5V    
 GND                          : AA9       : gnd    :                   :         :           :                
 VCCPD3A                      : AA10      : power  :                   : 2.5V    : 3A        :                
 GND                          : AA11      : gnd    :                   :         :           :                
-HPS_DDR3_DQ[9]               : AA12      : bidir  : 2.5 V             :         : 3A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 3B        :                
+HPS_DDR3_DM[2]               : AA12      : output : 2.5 V             :         : 3A        : N              
+fpga_q[4]                    : AA13      : input  : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA14      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA15      :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4A        :                
+SW[8]                        : AA16      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AA17      : power  :                   : 3.3V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA18      :        :                   :         : 4A        :                
-SW[6]                        : AA19      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA19      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA20      :        :                   :         : 4A        :                
-CLOCK2_50                    : AA21      : input  : 2.5 V             :         : 4A        : N              
+SW[2]                        : AA21      : input  : 2.5 V             :         : 4A        : N              
 GND                          : AA22      : gnd    :                   :         :           :                
 VCCPGM                       : AA23      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA24      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA25      :        :                   :         : 5A        :                
-hex0[21]                     : AA26      : output : 2.5 V             :         : 5B        : N              
+hex1[15]                     : AA26      : output : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : AA27      : power  :                   : 2.5V    : 5B        :                
-KEY[1]                       : AA28      : input  : 2.5 V             :         : 5B        : N              
+HPS_DDR3_DQ[26]              : AA28      : bidir  : 2.5 V             :         : 5B        : N              
 VREFB5BN0                    : AA29      : power  :                   :         : 5B        :                
-HPS_DDR3_DQ[21]              : AA30      : bidir  : 2.5 V             :         : 5B        : N              
+HPS_DDR3_DQS_N[2]            : AA30      : bidir  : 2.5 V             :         : 5B        : N              
 GND                          : AB1       : gnd    :                   :         :           :                
 GND                          : AB2       : gnd    :                   :         :           :                
 DNU                          : AB3       :        :                   :         :           :                
@@ -147,7 +147,7 @@ nCSO, DATA4                  : AB8       :        :                   :         
 altera_reserved_tdo          : AB9       : output : 2.5 V             :         : 3A        : N              
 VCCPGM                       : AB10      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 VCC_AUX                      : AB11      : power  :                   : 2.5V    :           :                
-leds[2]                      : AB12      : output : 2.5 V             :         : 3A        : N              
+leds[1]                      : AB12      : output : 2.5 V             :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB13      :        :                   :         : 3B        :                
 VCCIO3B                      : AB14      : power  :                   : 3.3V    : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB15      :        :                   :         : 3B        :                
@@ -160,12 +160,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB22      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB23      :        :                   :         : 5A        :                
 VCCIO5A                      : AB24      : power  :                   : 3.3V    : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB25      :        :                   :         : 5A        :                
+SW[6]                        : AB25      : input  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB26      :        :                   :         : 5A        :                
-leds[6]                      : AB27      : output : 2.5 V             :         : 5B        : N              
-hex0[30]                     : AB28      : output : 2.5 V             :         : 5B        : N              
+HPS_DDR3_DQ[31]              : AB27      : bidir  : 2.5 V             :         : 5B        : N              
+fpga_addr[5]                 : AB28      : output : 2.5 V             :         : 5B        : N              
 GND                          : AB29      : gnd    :                   :         :           :                
-HPS_DDR3_DQ[16]              : AB30      : bidir  : 2.5 V             :         : 5B        : N              
+hex0[20]                     : AB30      : output : 2.5 V             :         : 5B        : N              
 GND                          : AC1       : gnd    :                   :         :           :                
 GND                          : AC2       : gnd    :                   :         :           :                
 GND                          : AC3       : gnd    :                   :         :           :                
@@ -174,12 +174,12 @@ altera_reserved_tck          : AC5       : input  : 2.5 V             :         
 GND                          : AC6       : gnd    :                   :         :           :                
 AS_DATA3, DATA3              : AC7       :        :                   :         : 3A        :                
 GND                          : AC8       : gnd    :                   :         :           :                
-fpga_data[5]                 : AC9       : output : 2.5 V             :         : 3A        : N              
+fpga_data[2]                 : AC9       : output : 2.5 V             :         : 3A        : N              
 VCCPD3A                      : AC10      : power  :                   : 2.5V    : 3A        :                
 VCCIO3A                      : AC11      : power  :                   : 2.5V    : 3A        :                
-hex1[1]                      : AC12      : output : 2.5 V             :         : 3A        : N              
+hex1[11]                     : AC12      : output : 2.5 V             :         : 3A        : N              
 VCCPD3B4A                    : AC13      : power  :                   : 3.3V    : 3B, 4A    :                
-fpga_q[7]                    : AC14      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC14      :        :                   :         : 3B        :                
 VCCPD3B4A                    : AC15      : power  :                   : 3.3V    : 3B, 4A    :                
 GND                          : AC16      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AC17      : power  :                   : 3.3V    : 3B, 4A    :                
@@ -188,26 +188,26 @@ VCCPD3B4A                    : AC19      : power  :                   : 3.3V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC20      :        :                   :         : 4A        :                
 VCCIO4A                      : AC21      : power  :                   : 3.3V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC22      :        :                   :         : 4A        :                
-SW[7]                        : AC23      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC23      :        :                   :         : 4A        :                
 VREFB5AN0                    : AC24      : power  :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC25      :        :                   :         : 5A        :                
 GND                          : AC26      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC27      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC28      :        :                   :         : 5B        :                
-fpga_addr[0]                 : AC29      : output : 2.5 V             :         : 5B        : N              
-hex1[6]                      : AC30      : output : 2.5 V             :         : 5B        : N              
+HPS_DDR3_DQ[11]              : AC29      : bidir  : 2.5 V             :         : 5B        : N              
+leds[9]                      : AC30      : output : 2.5 V             :         : 5B        : N              
 GND                          : AD1       : gnd    :                   :         :           :                
 GND                          : AD2       : gnd    :                   :         :           :                
 DNU                          : AD3       :        :                   :         :           :                
 DNU                          : AD4       :        :                   :         :           :                
 GND                          : AD5       : gnd    :                   :         :           :                
 VREFB3AN0                    : AD6       : power  :                   :         : 3A        :                
-HPS_DDR3_DQ[19]              : AD7       : bidir  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD7       :        :                   :         : 3A        :                
 VCCIO3A                      : AD8       : power  :                   : 2.5V    : 3A        :                
-SW[5]                        : AD9       : input  : 2.5 V             :         : 3A        : N              
-fpga_data[4]                 : AD10      : output : 2.5 V             :         : 3A        : N              
-fpga_data[3]                 : AD11      : output : 2.5 V             :         : 3A        : N              
-HPS_DDR3_DQ[17]              : AD12      : bidir  : 2.5 V             :         : 3A        : N              
+leds[8]                      : AD9       : output : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[30]              : AD10      : bidir  : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQS_N[1]            : AD11      : bidir  : 2.5 V             :         : 3A        : N              
+hex1[12]                     : AD12      : output : 2.5 V             :         : 3A        : N              
 VCCIO3B                      : AD13      : power  :                   : 3.3V    : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD14      :        :                   :         : 3B        :                
 DNU                          : AD15      :        :                   :         :           :                
@@ -219,25 +219,25 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AD20      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD21      :        :                   :         : 4A        :                
 VCC_AUX                      : AD22      : power  :                   : 2.5V    :           :                
 GND                          : AD23      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD24      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD25      :        :                   :         : 5A        :                
+SW[9]                        : AD24      : input  : 2.5 V             :         : 4A        : N              
+SW[7]                        : AD25      : input  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD26      :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD27      :        :                   :         : 5A        :                
+fpga_q[7]                    : AD27      : input  : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : AD28      : power  :                   : 3.3V    : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD29      :        :                   :         : 5B        :                
-hex0[2]                      : AD30      : output : 2.5 V             :         : 5B        : N              
+HPS_DDR3_DQS_P[3]            : AD29      : bidir  : 2.5 V             :         : 5B        : N              
+leds[3]                      : AD30      : output : 2.5 V             :         : 5B        : N              
 GND                          : AE1       : gnd    :                   :         :           :                
 GND                          : AE2       : gnd    :                   :         :           :                
 GND                          : AE3       : gnd    :                   :         :           :                
 GND                          : AE4       : gnd    :                   :         :           :                
 AS_DATA1, DATA1              : AE5       :        :                   :         : 3A        :                
 AS_DATA0, ASDO, DATA0        : AE6       :        :                   :         : 3A        :                
-HPS_DDR3_DQ[20]              : AE7       : bidir  : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[12]              : AE7       : bidir  : 2.5 V             :         : 3A        : N              
 AS_DATA2, DATA2              : AE8       :        :                   :         : 3A        :                
-fpga_addr[1]                 : AE9       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE9       :        :                   :         : 3A        :                
 GND                          : AE10      : gnd    :                   :         :           :                
-fpga_data[1]                 : AE11      : output : 2.5 V             :         : 3A        : N              
-HPS_DDR3_DQ[30]              : AE12      : bidir  : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[10]              : AE11      : bidir  : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[27]              : AE12      : bidir  : 2.5 V             :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE13      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE14      :        :                   :         : 3B        :                
 VCCIO3B                      : AE15      : power  :                   : 3.3V    : 3B        :                
@@ -249,23 +249,23 @@ GND                          : AE20      : gnd    :                   :         
 VCCPD3B4A                    : AE21      : power  :                   : 3.3V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4A        :                
-fpga_q[0]                    : AE24      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4A        :                
 VCCIO4A                      : AE25      : power  :                   : 3.3V    : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE26      :        :                   :         : 5A        :                
+fpga_q[2]                    : AE26      : input  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE27      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE28      :        :                   :         : 5A        :                
-hex0[22]                     : AE29      : output : 2.5 V             :         : 5B        : N              
+hex0[25]                     : AE29      : output : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : AE30      : power  :                   : 2.5V    : 5B        :                
 GND                          : AF1       : gnd    :                   :         :           :                
 GND                          : AF2       : gnd    :                   :         :           :                
 GND                          : AF3       : gnd    :                   :         :           :                
-HPS_DDR3_DQ[25]              : AF4       : bidir  : 2.5 V             :         : 3A        : N              
-leds[3]                      : AF5       : output : 2.5 V             :         : 3A        : N              
-leds[0]                      : AF6       : output : 2.5 V             :         : 3A        : N              
+fpga_data[4]                 : AF4       : output : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[21]              : AF5       : bidir  : 2.5 V             :         : 3A        : N              
+hex0[13]                     : AF6       : output : 2.5 V             :         : 3A        : N              
 VCCIO3A                      : AF7       : power  :                   : 2.5V    : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF8       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF9       :        :                   :         : 3A        :                
-HPS_DDR3_DQ[22]              : AF10      : bidir  : 2.5 V             :         : 3A        : N              
+HPS_CONV_USB_N               : AF8       : bidir  : 2.5 V             :         : 3A        : N              
+fpga_addr[2]                 : AF9       : output : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF10      :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF11      :        :                   :         : 3B        :                
 GND                          : AF12      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3B        :                
@@ -276,24 +276,24 @@ GND                          : AF17      : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF19      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF21      :        :                   :         : 4A        :                
+SW[5]                        : AF21      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AF22      : power  :                   : 3.3V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF23      :        :                   :         : 4A        :                
-fpga_q[6]                    : AF24      : input  : 2.5 V             :         : 4A        : N              
-SW[8]                        : AF25      : input  : 2.5 V             :         : 4A        : N              
-SW[9]                        : AF26      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF24      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF25      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF26      :        :                   :         : 4A        :                
 GND                          : AF27      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF28      :        :                   :         : 5A        :                
+SW[1]                        : AF28      : input  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF29      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF30      :        :                   :         : 5A        :                
-HPS_DDR3_DQ[31]              : AG1       : bidir  : 2.5 V             :         : 3A        : N              
-hex0[20]                     : AG2       : output : 2.5 V             :         : 3A        : N              
-fpga_data[7]                 : AG3       : output : 2.5 V             :         : 3A        : N              
+hex0[26]                     : AG1       : output : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[13]              : AG2       : bidir  : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[28]              : AG3       : bidir  : 2.5 V             :         : 3A        : N              
 VCCIO3A                      : AG4       : power  :                   : 2.5V    : 3A        :                
-hex0[24]                     : AG5       : output : 2.5 V             :         : 3A        : N              
-HPS_DDR3_DQ[18]              : AG6       : bidir  : 2.5 V             :         : 3A        : N              
-HPS_DDR3_DQ[12]              : AG7       : bidir  : 2.5 V             :         : 3A        : N              
-HPS_DDR3_DQ[23]              : AG8       : bidir  : 2.5 V             :         : 3A        : N              
+hex0[12]                     : AG5       : output : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[22]              : AG6       : bidir  : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[25]              : AG7       : bidir  : 2.5 V             :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG8       :        :                   :         : 3A        :                
 GND                          : AG9       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG10      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG11      :        :                   :         : 3B        :                
@@ -301,36 +301,36 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG12      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG13      :        :                   :         : 3B        :                
 GND                          : AG14      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG15      :        :                   :         : 3B        :                
-fpga_q[4]                    : AG16      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG16      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG17      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG18      :        :                   :         : 4A        :                
 VCCIO4A                      : AG19      : power  :                   : 3.3V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG20      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG21      :        :                   :         : 4A        :                
+CLOCK3_50                    : AG21      : input  : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4A        :                
 GND                          : AG24      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 4A        :                
-SW[1]                        : AG26      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG26      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG27      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG28      :        :                   :         : 5A        :                
 VCCIO5A                      : AG29      : power  :                   : 3.3V    : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG30      :        :                   :         : 5A        :                
 GND                          : AH1       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH2       :        :                   :         : 3A        :                
-HPS_DDR3_DQ[10]              : AH3       : bidir  : 2.5 V             :         : 3A        : N              
-fpga_q[3]                    : AH4       : input  : 2.5 V             :         : 3A        : N              
-hex0[10]                     : AH5       : output : 2.5 V             :         : 3A        : N              
+hex1[14]                     : AH2       : output : 2.5 V             :         : 3A        : N              
+fpga_data[3]                 : AH3       : output : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[20]              : AH4       : bidir  : 2.5 V             :         : 3A        : N              
+HPS_DDR3_DQ[18]              : AH5       : bidir  : 2.5 V             :         : 3A        : N              
 GND                          : AH6       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH7       :        :                   :         : 3B        :                
-SW[0]                        : AH8       : input  : 2.5 V             :         : 3B        : N              
-KEY[3]                       : AH9       : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH8       :        :                   :         : 3B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH9       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH10      :        :                   :         : 3B        :                
 GND                          : AH11      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH12      :        :                   :         : 3B        :                
-fpga_q[5]                    : AH13      : input  : 2.5 V             :         : 3B        : N              
+SW[0]                        : AH12      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH13      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH14      :        :                   :         : 3B        :                
-CLOCK4_50                    : AH15      : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH15      :        :                   :         : 3B        :                
 VCCIO4A                      : AH16      : power  :                   : 3.3V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH17      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH18      :        :                   :         : 4A        :                
@@ -338,7 +338,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH19      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH20      :        :                   :         : 4A        :                
 GND                          : AH21      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4A        :                
-SW[2]                        : AH23      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH24      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 4A        :                
 VCCIO4A                      : AH26      : power  :                   : 3.3V    : 4A        :                
@@ -346,30 +346,30 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH27      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH28      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH29      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH30      :        :                   :         : 5A        :                
-HPS_DDR3_DQ[28]              : AJ1       : bidir  : 2.5 V             :         : 3A        : N              
-HPS_DDR3_DQS_N[1]            : AJ2       : bidir  : 2.5 V             :         : 3A        : N              
+fpga_addr[0]                 : AJ1       : output : 2.5 V             :         : 3A        : N              
+hex0[22]                     : AJ2       : output : 2.5 V             :         : 3A        : N              
 GND                          : AJ3       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ4       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ5       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ6       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ7       :        :                   :         : 3B        :                
 VCCIO3B                      : AJ8       : power  :                   : 3.3V    : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ9       :        :                   :         : 3B        :                
+fpga_q[5]                    : AJ9       : input  : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ10      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ11      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ12      :        :                   :         : 3B        :                
 VCCIO3B                      : AJ13      : power  :                   : 3.3V    : 3B        :                
-CLOCK3_50                    : AJ14      : input  : 2.5 V             :         : 3B        : N              
+KEY[0]                       : AJ14      : input  : 2.5 V             :         : 3B        : N              
 VREFB3BN0                    : AJ15      : power  :                   :         : 3B        :                
-fpga_q[2]                    : AJ16      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ16      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ17      :        :                   :         : 4A        :                
 GND                          : AJ18      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ19      :        :                   :         : 4A        :                
+SW[4]                        : AJ19      : input  : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ21      :        :                   :         : 4A        :                
-SW[4]                        : AJ22      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ22      :        :                   :         : 4A        :                
 VCCIO4A                      : AJ23      : power  :                   : 3.3V    : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ24      :        :                   :         : 4A        :                
+fpga_q[1]                    : AJ24      : input  : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ25      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ26      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ27      :        :                   :         : 4A        :                
@@ -378,11 +378,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AJ29      :        :                   :      
 GND                          : AJ30      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK2       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK3       :        :                   :         : 3B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK4       :        :                   :         : 3B        :                
+fpga_q[3]                    : AK4       : input  : 2.5 V             :         : 3B        : N              
 GND                          : AK5       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK6       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK7       :        :                   :         : 3B        :                
-KEY[2]                       : AK8       : input  : 2.5 V             :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK8       :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK9       :        :                   :         : 3B        :                
 VCCIO3B                      : AK10      : power  :                   : 3.3V    : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK11      :        :                   :         : 3B        :                
@@ -390,7 +390,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AK12      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK13      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK14      :        :                   :         : 3B        :                
 GND                          : AK15      : gnd    :                   :         :           :                
-fpga_q[1]                    : AK16      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK16      :        :                   :         : 4A        :                
 VREFB4AN0                    : AK17      : power  :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK19      :        :                   :         : 4A        :                
@@ -402,21 +402,21 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AK24      :        :                   :      
 GND                          : AK25      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK26      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK27      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK28      :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK29      :        :                   :         : 4A        :                
-hex0[15]                     : B1        : output : 2.5 V             :         : 8A        : N              
-fpga_addr[4]                 : B2        : output : 2.5 V             :         : 8A        : N              
-HPS_DDR3_DQS_P[3]            : B3        : bidir  : 2.5 V             :         : 8A        : N              
+fpga_q[0]                    : AK28      : input  : 2.5 V             :         : 4A        : N              
+fpga_q[6]                    : AK29      : input  : 2.5 V             :         : 4A        : N              
+HPS_DDR3_DQ[9]               : B1        : bidir  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[14]              : B2        : bidir  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[16]              : B3        : bidir  : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : B4        : power  :                   : 2.5V    : 8A        :                
-HPS_DDR3_DQS_P[2]            : B5        : bidir  : 2.5 V             :         : 8A        : N              
-HPS_DDR3_DQ[11]              : B6        : bidir  : 2.5 V             :         : 8A        : N              
-hex1[11]                     : B7        : output : 2.5 V             :         : 8A        : N              
-hex0[23]                     : B8        : output : 2.5 V             :         : 8A        : N              
+fpga_data[7]                 : B5        : output : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[15]              : B6        : bidir  : 2.5 V             :         : 8A        : N              
+hex1[0]                      : B7        : output : 2.5 V             :         : 8A        : N              
+hex0[1]                      : B8        : output : 2.5 V             :         : 8A        : N              
 GND                          : B9        : gnd    :                   :         :           :                
 VREFB8AN0                    : B10       : power  :                   :         : 8A        :                
-hex0[14]                     : B11       : output : 2.5 V             :         : 8A        : N              
-hex1[13]                     : B12       : output : 2.5 V             :         : 8A        : N              
-hex0[28]                     : B13       : output : 2.5 V             :         : 8A        : N              
+hex0[5]                      : B11       : output : 2.5 V             :         : 8A        : N              
+hex0[29]                     : B12       : output : 2.5 V             :         : 8A        : N              
+hex0[31]                     : B13       : output : 2.5 V             :         : 8A        : N              
 GND                          : B14       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B15       :        :                   :         : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B16       :        :                   :         : 7C        :                
@@ -435,18 +435,18 @@ HPS_TDO                      : B28       :        :                   :         
 GND                          : B29       : gnd    :                   :         :           :                
 HPS_DDR3_ADDR[12]            : B30       : output : SSTL-15 Class I   :         : 6A        : N              
 GND                          : C1        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 8A        :                
-fpga_data[0]                 : C3        : output : 2.5 V             :         : 8A        : N              
-HPS_DDR3_DQS_P[1]            : C4        : bidir  : 2.5 V             :         : 8A        : N              
+leds[0]                      : C2        : output : 2.5 V             :         : 8A        : N              
+hex0[16]                     : C3        : output : 2.5 V             :         : 8A        : N              
+hex1[13]                     : C4        : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 8A        :                
 GND                          : C6        : gnd    :                   :         :           :                
 hex1[5]                      : C7        : output : 2.5 V             :         : 8A        : N              
-hex0[29]                     : C8        : output : 2.5 V             :         : 8A        : N              
-hex0[3]                      : C9        : output : 2.5 V             :         : 8A        : N              
-fpga_data[6]                 : C10       : output : 2.5 V             :         : 8A        : N              
+hex0[4]                      : C8        : output : 2.5 V             :         : 8A        : N              
+hex0[17]                     : C9        : output : 2.5 V             :         : 8A        : N              
+hex0[30]                     : C10       : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : C11       : power  :                   : 2.5V    : 8A        :                
-hex0[31]                     : C12       : output : 2.5 V             :         : 8A        : N              
-hex1[14]                     : C13       : output : 2.5 V             :         : 8A        : N              
+hex0[27]                     : C12       : output : 2.5 V             :         : 8A        : N              
+leds[5]                      : C13       : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 7D        :                
 GND                          : C16       : gnd    :                   :         :           :                
@@ -464,18 +464,18 @@ HPS_nRST                     : C27       :        :                   :         
 HPS_DDR3_WE_N                : C28       : output : SSTL-15 Class I   :         : 6A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C29       :        :                   :         : 6A        :                
 HPS_DDR3_ADDR[11]            : C30       : output : SSTL-15 Class I   :         : 6A        : N              
-HPS_DDR3_DQ[13]              : D1        : bidir  : 2.5 V             :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 8A        :                
+HPS_DDR3_DQS_P[1]            : D1        : bidir  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[24]              : D2        : bidir  : 2.5 V             :         : 8A        : N              
 GND                          : D3        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 8A        :                
-fpga_addr[2]                 : D5        : output : 2.5 V             :         : 8A        : N              
-hex0[1]                      : D6        : output : 2.5 V             :         : 8A        : N              
-fpga_we                      : D7        : output : 2.5 V             :         : 8A        : N              
+fpga_data[1]                 : D5        : output : 2.5 V             :         : 8A        : N              
+leds[2]                      : D6        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D7        :        :                   :         : 8A        :                
 VCCIO8A                      : D8        : power  :                   : 2.5V    : 8A        :                
-hex0[8]                      : D9        : output : 2.5 V             :         : 8A        : N              
-hex0[18]                     : D10       : output : 2.5 V             :         : 8A        : N              
-hex0[26]                     : D11       : output : 2.5 V             :         : 8A        : N              
-leds[9]                      : D12       : output : 2.5 V             :         : 8A        : N              
+hex0[10]                     : D9        : output : 2.5 V             :         : 8A        : N              
+hex1[4]                      : D10       : output : 2.5 V             :         : 8A        : N              
+hex0[7]                      : D11       : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 8A        :                
 GND                          : D13       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 7D        :                
@@ -494,19 +494,19 @@ HPS_DDR3_RZQ                 : D27       : input  : SSTL-15 Class I   :         
 VCCIO6A_HPS                  : D28       : power  :                   : 1.5V    : 6A        :                
 HPS_DDR3_ADDR[10]            : D29       : output : SSTL-15 Class I   :         : 6A        : N              
 HPS_DDR3_RAS_N               : D30       : output : SSTL-15 Class I   :         : 6A        : N              
-fpga_addr[5]                 : E1        : output : 2.5 V             :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E2        :        :                   :         : 8A        :                
-HPS_DDR3_DQ[15]              : E3        : bidir  : 2.5 V             :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 8A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E1        :        :                   :         : 8A        :                
+fpga_data[0]                 : E2        : output : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[19]              : E3        : bidir  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[29]              : E4        : bidir  : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : E5        : power  :                   : 2.5V    : 8A        :                
-HPS_DDR3_DQS_N[2]            : E6        : bidir  : 2.5 V             :         : 8A        : N              
-HPS_DDR3_DQ[29]              : E7        : bidir  : 2.5 V             :         : 8A        : N              
-hex0[5]                      : E8        : output : 2.5 V             :         : 8A        : N              
-hex1[4]                      : E9        : output : 2.5 V             :         : 8A        : N              
+CLOCK4_50                    : E6        : input  : 2.5 V             :         : 8A        : N              
+fpga_data[6]                 : E7        : output : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DM[1]               : E8        : output : 2.5 V             :         : 8A        : N              
+leds[7]                      : E9        : output : 2.5 V             :         : 8A        : N              
 GND                          : E10       : gnd    :                   :         :           :                
-hex0[17]                     : E11       : output : 2.5 V             :         : 8A        : N              
-leds[5]                      : E12       : output : 2.5 V             :         : 8A        : N              
-hex0[0]                      : E13       : output : 2.5 V             :         : 8A        : N              
+hex0[24]                     : E11       : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E12       :        :                   :         : 8A        :                
+hex0[18]                     : E13       : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 7D        :                
 VCCIO7D_HPS                  : E15       : power  :                   : 2.5V    : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E16       :        :                   :         : 7D        :                
@@ -529,16 +529,16 @@ GND                          : F2        : gnd    :                   :         
 CONF_DONE                    : F3        :        :                   :         : 9A        :                
 nSTATUS                      : F4        :        :                   :         : 9A        :                
 GND                          : F5        : gnd    :                   :         :           :                
-HPS_DDR3_DQ[24]              : F6        : bidir  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_ADDR[14]            : F6        : output : 2.5 V             :         : 8A        : N              
 GND                          : F7        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8A        :                
-HPS_DDR3_DM[3]               : F10       : output : 2.5 V             :         : 8A        : N              
-hex1[10]                     : F11       : output : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[23]              : F8        : bidir  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQS_N[3]            : F9        : bidir  : 2.5 V             :         : 8A        : N              
+fpga_we                      : F10       : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F11       :        :                   :         : 8A        :                
 VCCIO8A                      : F12       : power  :                   : 2.5V    : 8A        :                
-leds[8]                      : F13       : output : 2.5 V             :         : 8A        : N              
-hex0[16]                     : F14       : output : 2.5 V             :         : 8A        : N              
-hex1[2]                      : F15       : output : 2.5 V             :         : 8A        : N              
+hex0[19]                     : F13       : output : 2.5 V             :         : 8A        : N              
+hex0[3]                      : F14       : output : 2.5 V             :         : 8A        : N              
+hex0[14]                     : F15       : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 7D        :                
 GND                          : F17       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 7C        :                
@@ -560,15 +560,15 @@ GND                          : G3        : gnd    :                   :         
 GND                          : G4        : gnd    :                   :         :           :                
 nCE                          : G5        :        :                   :         : 9A        :                
 MSEL2                        : G6        :        :                   :         : 9A        :                
-HPS_DDR3_DQ[27]              : G7        : bidir  : 2.5 V             :         : 8A        : N              
-hex0[12]                     : G8        : output : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[17]              : G7        : bidir  : 2.5 V             :         : 8A        : N              
+hex0[21]                     : G8        : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : G9        : power  :                   : 2.5V    : 8A        :                
-HPS_DDR3_DQS_N[3]            : G10       : bidir  : 2.5 V             :         : 8A        : N              
-HPS_DDR3_DQ[8]               : G11       : bidir  : 2.5 V             :         : 8A        : N              
-fpga_addr[3]                 : G12       : output : 2.5 V             :         : 8A        : N              
-hex0[6]                      : G13       : output : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DM[3]               : G10       : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G11       :        :                   :         : 8A        :                
+fpga_addr[1]                 : G12       : output : 2.5 V             :         : 8A        : N              
+leds[6]                      : G13       : output : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : G14       : power  :                   : 2.5V    : 8A        :                
-hex1[0]                      : G15       : output : 2.5 V             :         : 8A        : N              
+hex1[8]                      : G15       : output : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 7C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G18       :        :                   :         : 7C        :                
@@ -590,15 +590,15 @@ DNU                          : H3        :        :                   :         
 DNU                          : H4        :        :                   :         :           :                
 GND                          : H5        : gnd    :                   :         :           :                
 VCCIO8A                      : H6        : power  :                   : 2.5V    : 8A        :                
-fpga_data[2]                 : H7        : output : 2.5 V             :         : 8A        : N              
-hex0[4]                      : H8        : output : 2.5 V             :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 8A        :                
+hex0[2]                      : H8        : output : 2.5 V             :         : 8A        : N              
 VCCBAT                       : H9        : power  :                   : 1.2V    :           :                
 VCC_AUX                      : H10       : power  :                   : 2.5V    :           :                
 GND                          : H11       : gnd    :                   :         :           :                
-hex1[15]                     : H12       : output : 2.5 V             :         : 8A        : N              
-leds[4]                      : H13       : output : 2.5 V             :         : 8A        : N              
-hex1[7]                      : H14       : output : 2.5 V             :         : 8A        : N              
-hex0[27]                     : H15       : output : 2.5 V             :         : 8A        : N              
+hex0[8]                      : H12       : output : 2.5 V             :         : 8A        : N              
+hex1[9]                      : H13       : output : 2.5 V             :         : 8A        : N              
+hex0[23]                     : H14       : output : 2.5 V             :         : 8A        : N              
+hex0[11]                     : H15       : output : 2.5 V             :         : 8A        : N              
 VCCIO7D_HPS                  : H16       : power  :                   : 2.5V    : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 7C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 7B        :                
@@ -620,14 +620,14 @@ GND                          : J3        : gnd    :                   :         
 GND                          : J4        : gnd    :                   :         :           :                
 nCONFIG                      : J5        :        :                   :         : 9A        :                
 GND                          : J6        :        :                   :         : 9A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 8A        :                
+hex1[1]                      : J7        : output : 2.5 V             :         : 8A        : N              
 GND                          : J8        : gnd    :                   :         :           :                
-HPS_DDR3_DQ[14]              : J9        : bidir  : 2.5 V             :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J10       :        :                   :         : 8A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J9        :        :                   :         : 8A        :                
+fpga_addr[3]                 : J10       : output : 2.5 V             :         : 8A        : N              
 VCCPGM                       : J11       : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
-HPS_DDR3_DQ[26]              : J12       : bidir  : 2.5 V             :         : 8A        : N              
+HPS_DDR3_DQ[8]               : J12       : bidir  : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : J13       : power  :                   : 2.5V    : 8A        :                
-hex1[12]                     : J14       : output : 2.5 V             :         : 8A        : N              
+hex1[2]                      : J14       : output : 2.5 V             :         : 8A        : N              
 DNU                          : J15       :        :                   :         :           :                
 VCC_AUX                      : J16       : power  :                   : 2.5V    :           :                
 VCCPD7C_HPS                  : J17       : power  :                   : 2.5V    : 7C        :                
@@ -650,14 +650,14 @@ DNU                          : K3        :        :                   :         
 DNU                          : K4        :        :                   :         :           :                
 GND                          : K5        : gnd    :                   :         :           :                
 MSEL1                        : K6        :        :                   :         : 9A        :                
-HPS_DDR3_ADDR[14]            : K7        : output : 2.5 V             :         : 8A        : N              
-HPS_DDR3_DM[1]               : K8        : output : 2.5 V             :         : 8A        : N              
+hex0[6]                      : K7        : output : 2.5 V             :         : 8A        : N              
+fpga_data[5]                 : K8        : output : 2.5 V             :         : 8A        : N              
 VCCA_FPLL                    : K9        : power  :                   : 2.5V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCCPD8A                      : K11       : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K12       :        :                   :         : 8A        :                
 VCCPD8A                      : K13       : power  :                   : 2.5V    : 8A        :                
-hex1[9]                      : K14       : output : 2.5 V             :         : 8A        : N              
+hex1[3]                      : K14       : output : 2.5 V             :         : 8A        : N              
 GND                          : K15       : gnd    :                   :         :           :                
 VCCPD7D_HPS                  : K16       : power  :                   : 2.5V    : 7D        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K17       :        :                   :         : 7B        :                
@@ -908,7 +908,7 @@ GND                          : V21       : gnd    :                   :         
 VCCPD5A                      : V22       : power  :                   : 3.3V    : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V23       :        :                   :         : 5A        :                
 VCCPD5A                      : V24       : power  :                   : 3.3V    : 5A        :                
-HPS_DDR3_DM[2]               : V25       : output : 2.5 V             :         : 5B        : N              
+HPS_DDR3_ADDR[13]            : V25       : output : 2.5 V             :         : 5B        : N              
 VCCIO6B_HPS                  : V26       : power  :                   : 1.5V    : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V27       :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V28       :        :                   :         : 6B        :                
@@ -928,7 +928,7 @@ GND                          : W11       : gnd    :                   :         
 VCC                          : W12       : power  :                   : 1.1V    :           :                
 GND                          : W13       : gnd    :                   :         :           :                
 VCC                          : W14       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 3B        :                
+KEY[2]                       : W15       : input  : 2.5 V             :         : 3B        : N              
 LEDR[1]                      : W16       : output : 3.3-V LVTTL       :         : 4A        : Y              
 LEDR[4]                      : W17       : output : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : W18       : gnd    :                   :         :           :                
@@ -938,7 +938,7 @@ LEDR[8]                      : W21       : output : 3.3-V LVTTL       :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : W22       :        :                   :         : 5A        :                
 VCCIO5A                      : W23       : power  :                   : 3.3V    : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W24       :        :                   :         : 5A        :                
-HPS_DDR3_ADDR[13]            : W25       : output : 2.5 V             :         : 5B        : N              
+fpga_addr[4]                 : W25       : output : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W26       :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W27       :        :                   :         : 6B        :                
 GND                          : W28       : gnd    :                   :         :           :                
@@ -959,18 +959,18 @@ GND                          : Y12       : gnd    :                   :         
 VCC                          : Y13       : power  :                   : 1.1V    :           :                
 GND                          : Y14       : gnd    :                   :         :           :                
 GND                          : Y15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 3B        :                
+KEY[3]                       : Y16       : input  : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y18       :        :                   :         : 4A        :                
 LEDR[6]                      : Y19       : output : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : Y20       : gnd    :                   :         :           :                
 LEDR[9]                      : Y21       : output : 3.3-V LVTTL       :         : 5A        : Y              
 VCCA_FPLL                    : Y22       : power  :                   : 2.5V    :           :                
-KEY[0]                       : Y23       : input  : 2.5 V             :         : 5A        : N              
+CLOCK2_50                    : Y23       : input  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y24       :        :                   :         : 5A        :                
 GND                          : Y25       : gnd    :                   :         :           :                
-HPS_CONV_USB_N               : Y26       : bidir  : 2.5 V             :         : 5B        : N              
-hex0[19]                     : Y27       : output : 2.5 V             :         : 5B        : N              
+hex1[6]                      : Y26       : output : 2.5 V             :         : 5B        : N              
+KEY[1]                       : Y27       : input  : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y28       :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y29       :        :                   :         : 6B        :                
 GND                          : Y30       : gnd    :                   :         :           :                

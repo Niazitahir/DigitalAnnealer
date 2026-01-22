@@ -39,7 +39,7 @@ module single_port_ram
 		end
 		// Write
 		else begin
-		   led_arr <= {10'b1100000000};
+		   //led_arr <= {10'b1100000000};
 			if (we) begin
 				led_arr <= {10'b1100000111};
 				ram[addr] <= data;
@@ -47,13 +47,11 @@ module single_port_ram
 			end
 		end
 	end
-
+	assign q = ram[addr_reg];
 	// Continuous assignment implies read returns NEW data.
 	// This is the natural behavior of the TriMatrix memory
 	// blocks in Single Port mode.  
-	assign q = 16'b1111111111111111;
-	assign hex0 = 32'b1111111111111111111111111111111;
 	assign leds = led_arr;
-	//assign q = ram[addr_reg];
+
 
 endmodule

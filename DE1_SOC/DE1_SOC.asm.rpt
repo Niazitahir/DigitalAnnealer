@@ -1,6 +1,6 @@
 Assembler report for DE1_SOC
-Mon Jan 19 23:38:25 2026
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Wed Jan 21 00:20:00 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -11,7 +11,7 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC.sof
+  6. Assembler Device Options: C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC.sof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jan 19 23:38:25 2026 ;
+; Assembler Status      ; Successful - Wed Jan 21 00:20:00 2026 ;
 ; Revision Name         ; DE1_SOC                               ;
 ; Top-level Entity Name ; DE1_SOCTop                            ;
 ; Family                ; Cyclone V                             ;
@@ -63,23 +63,23 @@ refer to the applicable agreement for further details.
 +--------+------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------+
-; Assembler Generated Files                                                       ;
-+---------------------------------------------------------------------------------+
-; File Name                                                                       ;
-+---------------------------------------------------------------------------------+
-; C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC.sof ;
-+---------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+
+; Assembler Generated Files                                                    ;
++------------------------------------------------------------------------------+
+; File Name                                                                    ;
++------------------------------------------------------------------------------+
+; C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC.sof ;
++------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC.sof ;
-+----------------+------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                  ;
-+----------------+------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00DDFBF2                                                                               ;
-; Checksum       ; 0x00DDFBF2                                                                               ;
-+----------------+------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC.sof ;
++----------------+---------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                               ;
++----------------+---------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00E32FDB                                                                            ;
+; Checksum       ; 0x00E32FDB                                                                            ;
++----------------+---------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -87,16 +87,16 @@ refer to the applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Jan 19 23:38:15 2026
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Jan 21 00:19:51 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE1_SOC -c DE1_SOC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Mon Jan 19 23:38:25 2026
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 4876 megabytes
+    Info: Processing ended: Wed Jan 21 00:20:00 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:09
 
 

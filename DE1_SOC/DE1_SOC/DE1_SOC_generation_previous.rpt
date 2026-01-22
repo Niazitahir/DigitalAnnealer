@@ -1,21 +1,21 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Users\khanmom1\DigitalAnnealer-main\DigitalAnnealer-main\DE1_SOC\DE1_SOC.qsys --block-symbol-file --output-directory=C:\Users\khanmom1\DigitalAnnealer-main\DigitalAnnealer-main\DE1_SOC\DE1_SOC --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate C:\Users\khanm\OneDrive\Documents\GitHub\DigitalAnnealer\DE1_SOC\DE1_SOC.qsys --block-symbol-file --output-directory=C:\Users\khanm\OneDrive\Documents\GitHub\DigitalAnnealer\DE1_SOC\DE1_SOC --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading DE1_SOC/DE1_SOC.qsys
 Progress: Reading input file
-Progress: Adding HEX3_0 [altera_avalon_pio 18.0]
+Progress: Adding HEX3_0 [altera_avalon_pio 18.1]
 Progress: Parameterizing module HEX3_0
-Progress: Adding HEX5_4 [altera_avalon_pio 18.0]
+Progress: Adding HEX5_4 [altera_avalon_pio 18.1]
 Progress: Parameterizing module HEX5_4
-Progress: Adding LEDS [altera_avalon_pio 18.0]
+Progress: Adding KEYS [altera_avalon_pio 18.1]
+Progress: Parameterizing module KEYS
+Progress: Adding LEDS [altera_avalon_pio 18.1]
 Progress: Parameterizing module LEDS
-Progress: Adding clk_0 [clock_source 18.0]
+Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
-Progress: Adding hps_0 [altera_hps 18.0]
+Progress: Adding hps_0 [altera_hps 18.1]
 Progress: Parameterizing module hps_0
-Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.0]
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_uart_0
-Progress: Adding reset_bridge_0 [altera_reset_bridge 18.0]
-Progress: Parameterizing module reset_bridge_0
 Progress: Adding single_port_ram_0 [single_port_ram 1.0]
 Progress: Parameterizing module single_port_ram_0
 Progress: Adding sys_sdram_pll_0 [altera_up_avalon_sys_sdram_pll 18.0]
@@ -24,6 +24,7 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: DE1_SOC.KEYS: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: DE1_SOC.hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: DE1_SOC.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: DE1_SOC.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
@@ -33,28 +34,27 @@ Warning: DE1_SOC.hps_0: set_interface_assignment: Interface "hps_io" does not ex
 Info: DE1_SOC.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Info: DE1_SOC.sys_sdram_pll_0: Refclk Freq: 50.0
 Warning: DE1_SOC.jtag_uart_0: Interrupt sender jtag_uart_0.irq is not connected to an interrupt receiver
-Warning: DE1_SOC.: You have exported the interface reset_bridge_0.out_reset_1 but not its associated clock interface.  Export reset_bridge_0.clk
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Users\khanmom1\DigitalAnnealer-main\DigitalAnnealer-main\DE1_SOC\DE1_SOC.qsys --synthesis=VERILOG --output-directory=C:\Users\khanmom1\DigitalAnnealer-main\DigitalAnnealer-main\DE1_SOC\DE1_SOC\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate C:\Users\khanm\OneDrive\Documents\GitHub\DigitalAnnealer\DE1_SOC\DE1_SOC.qsys --synthesis=VERILOG --output-directory=C:\Users\khanm\OneDrive\Documents\GitHub\DigitalAnnealer\DE1_SOC\DE1_SOC\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading DE1_SOC/DE1_SOC.qsys
 Progress: Reading input file
-Progress: Adding HEX3_0 [altera_avalon_pio 18.0]
+Progress: Adding HEX3_0 [altera_avalon_pio 18.1]
 Progress: Parameterizing module HEX3_0
-Progress: Adding HEX5_4 [altera_avalon_pio 18.0]
+Progress: Adding HEX5_4 [altera_avalon_pio 18.1]
 Progress: Parameterizing module HEX5_4
-Progress: Adding LEDS [altera_avalon_pio 18.0]
+Progress: Adding KEYS [altera_avalon_pio 18.1]
+Progress: Parameterizing module KEYS
+Progress: Adding LEDS [altera_avalon_pio 18.1]
 Progress: Parameterizing module LEDS
-Progress: Adding clk_0 [clock_source 18.0]
+Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
-Progress: Adding hps_0 [altera_hps 18.0]
+Progress: Adding hps_0 [altera_hps 18.1]
 Progress: Parameterizing module hps_0
-Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.0]
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_uart_0
-Progress: Adding reset_bridge_0 [altera_reset_bridge 18.0]
-Progress: Parameterizing module reset_bridge_0
 Progress: Adding single_port_ram_0 [single_port_ram 1.0]
 Progress: Parameterizing module single_port_ram_0
 Progress: Adding sys_sdram_pll_0 [altera_up_avalon_sys_sdram_pll 18.0]
@@ -63,6 +63,7 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: DE1_SOC.KEYS: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: DE1_SOC.hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: DE1_SOC.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: DE1_SOC.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
@@ -72,19 +73,27 @@ Warning: DE1_SOC.hps_0: set_interface_assignment: Interface "hps_io" does not ex
 Info: DE1_SOC.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Info: DE1_SOC.sys_sdram_pll_0: Refclk Freq: 50.0
 Warning: DE1_SOC.jtag_uart_0: Interrupt sender jtag_uart_0.irq is not connected to an interrupt receiver
-Warning: DE1_SOC.: You have exported the interface reset_bridge_0.out_reset_1 but not its associated clock interface.  Export reset_bridge_0.clk
 Info: DE1_SOC: Generating DE1_SOC "DE1_SOC" for QUARTUS_SYNTH
 Info: Interconnect is inserted between master hps_0.h2f_axi_master and slave single_port_ram_0.avalon_slave_0 because the master is of type axi and the slave is of type avalon.
+Info: Interconnect is inserted between master hps_0.h2f_axi_master and slave single_port_ram_0.avalon_slave_0 because they have different clock source.
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux.sink1
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src1 and rsp_mux_001.sink0
 Info: HEX3_0: Starting RTL generation for module 'DE1_SOC_HEX3_0'
-Info: HEX3_0:   Generation command is [exec C:/desl/quartus18/quartus/bin64/perl/bin/perl.exe -I C:/desl/quartus18/quartus/bin64/perl/lib -I C:/desl/quartus18/quartus/sopc_builder/bin/europa -I C:/desl/quartus18/quartus/sopc_builder/bin/perl_lib -I C:/desl/quartus18/quartus/sopc_builder/bin -I C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/common -I C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=DE1_SOC_HEX3_0 --dir=C:/Users/khanmom1/AppData/Local/Temp/alt0473_1243477643670716743.dir/0002_HEX3_0_gen/ --quartus_dir=C:/desl/quartus18/quartus --verilog --config=C:/Users/khanmom1/AppData/Local/Temp/alt0473_1243477643670716743.dir/0002_HEX3_0_gen//DE1_SOC_HEX3_0_component_configuration.pl  --do_build_sim=0  ]
+Info: HEX3_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=DE1_SOC_HEX3_0 --dir=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0162_HEX3_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0162_HEX3_0_gen//DE1_SOC_HEX3_0_component_configuration.pl  --do_build_sim=0  ]
 Info: HEX3_0: Done RTL generation for module 'DE1_SOC_HEX3_0'
 Info: HEX3_0: "DE1_SOC" instantiated altera_avalon_pio "HEX3_0"
 Info: HEX5_4: Starting RTL generation for module 'DE1_SOC_HEX5_4'
-Info: HEX5_4:   Generation command is [exec C:/desl/quartus18/quartus/bin64/perl/bin/perl.exe -I C:/desl/quartus18/quartus/bin64/perl/lib -I C:/desl/quartus18/quartus/sopc_builder/bin/europa -I C:/desl/quartus18/quartus/sopc_builder/bin/perl_lib -I C:/desl/quartus18/quartus/sopc_builder/bin -I C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/common -I C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=DE1_SOC_HEX5_4 --dir=C:/Users/khanmom1/AppData/Local/Temp/alt0473_1243477643670716743.dir/0003_HEX5_4_gen/ --quartus_dir=C:/desl/quartus18/quartus --verilog --config=C:/Users/khanmom1/AppData/Local/Temp/alt0473_1243477643670716743.dir/0003_HEX5_4_gen//DE1_SOC_HEX5_4_component_configuration.pl  --do_build_sim=0  ]
+Info: HEX5_4:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=DE1_SOC_HEX5_4 --dir=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0163_HEX5_4_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0163_HEX5_4_gen//DE1_SOC_HEX5_4_component_configuration.pl  --do_build_sim=0  ]
 Info: HEX5_4: Done RTL generation for module 'DE1_SOC_HEX5_4'
 Info: HEX5_4: "DE1_SOC" instantiated altera_avalon_pio "HEX5_4"
+Info: KEYS: Starting RTL generation for module 'DE1_SOC_KEYS'
+Info: KEYS:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=DE1_SOC_KEYS --dir=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0164_KEYS_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0164_KEYS_gen//DE1_SOC_KEYS_component_configuration.pl  --do_build_sim=0  ]
+Info: KEYS: Done RTL generation for module 'DE1_SOC_KEYS'
+Info: KEYS: "DE1_SOC" instantiated altera_avalon_pio "KEYS"
 Info: LEDS: Starting RTL generation for module 'DE1_SOC_LEDS'
-Info: LEDS:   Generation command is [exec C:/desl/quartus18/quartus/bin64/perl/bin/perl.exe -I C:/desl/quartus18/quartus/bin64/perl/lib -I C:/desl/quartus18/quartus/sopc_builder/bin/europa -I C:/desl/quartus18/quartus/sopc_builder/bin/perl_lib -I C:/desl/quartus18/quartus/sopc_builder/bin -I C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/common -I C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=DE1_SOC_LEDS --dir=C:/Users/khanmom1/AppData/Local/Temp/alt0473_1243477643670716743.dir/0004_LEDS_gen/ --quartus_dir=C:/desl/quartus18/quartus --verilog --config=C:/Users/khanmom1/AppData/Local/Temp/alt0473_1243477643670716743.dir/0004_LEDS_gen//DE1_SOC_LEDS_component_configuration.pl  --do_build_sim=0  ]
+Info: LEDS:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=DE1_SOC_LEDS --dir=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0165_LEDS_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0165_LEDS_gen//DE1_SOC_LEDS_component_configuration.pl  --do_build_sim=0  ]
 Info: LEDS: Done RTL generation for module 'DE1_SOC_LEDS'
 Info: LEDS: "DE1_SOC" instantiated altera_avalon_pio "LEDS"
 Info: hps_0: "Running  for module: hps_0"
@@ -96,7 +105,7 @@ Warning: hps_0: ODT is disabled. Enabling ODT (Mode Register 1) may improve sign
 Warning: hps_0: set_interface_assignment: Interface "hps_io" does not exist
 Info: hps_0: "DE1_SOC" instantiated altera_hps "hps_0"
 Info: jtag_uart_0: Starting RTL generation for module 'DE1_SOC_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec C:/desl/quartus18/quartus/bin64/perl/bin/perl.exe -I C:/desl/quartus18/quartus/bin64/perl/lib -I C:/desl/quartus18/quartus/sopc_builder/bin/europa -I C:/desl/quartus18/quartus/sopc_builder/bin/perl_lib -I C:/desl/quartus18/quartus/sopc_builder/bin -I C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/common -I C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/desl/quartus18/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=DE1_SOC_jtag_uart_0 --dir=C:/Users/khanmom1/AppData/Local/Temp/alt0473_1243477643670716743.dir/0005_jtag_uart_0_gen/ --quartus_dir=C:/desl/quartus18/quartus --verilog --config=C:/Users/khanmom1/AppData/Local/Temp/alt0473_1243477643670716743.dir/0005_jtag_uart_0_gen//DE1_SOC_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=DE1_SOC_jtag_uart_0 --dir=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0166_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/khanm/AppData/Local/Temp/alt0474_7582291519575151286.dir/0166_jtag_uart_0_gen//DE1_SOC_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'DE1_SOC_jtag_uart_0'
 Info: jtag_uart_0: "DE1_SOC" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: single_port_ram_0: "DE1_SOC" instantiated single_port_ram "single_port_ram_0"
@@ -107,6 +116,7 @@ Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_1: "DE1_SOC" instantiated altera_mm_interconnect "mm_interconnect_1"
 Info: rst_controller: "DE1_SOC" instantiated altera_reset_controller "rst_controller"
 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
@@ -120,31 +130,33 @@ Info: single_port_ram_0_avalon_slave_0_agent_rsp_fifo: "mm_interconnect_0" insta
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: single_port_ram_0_avalon_slave_0_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "single_port_ram_0_avalon_slave_0_burst_adapter"
-Info: Reusing file C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: single_port_ram_0_avalon_slave_0_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "single_port_ram_0_avalon_slave_0_rsp_width_adapter"
-Info: Reusing file C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
 Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
-Info: Reusing file C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/khanmom1/DigitalAnnealer-main/DigitalAnnealer-main/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/khanm/OneDrive/Documents/GitHub/DigitalAnnealer/DE1_SOC/DE1_SOC/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: DE1_SOC: Done "DE1_SOC" with 39 modules, 97 files
+Info: DE1_SOC: Done "DE1_SOC" with 41 modules, 102 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis
