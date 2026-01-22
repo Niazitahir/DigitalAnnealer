@@ -6,6 +6,7 @@
 		.hps_0_h2f_mpu_events_evento     (<connected-to-hps_0_h2f_mpu_events_evento>),     //                          .evento
 		.hps_0_h2f_mpu_events_standbywfe (<connected-to-hps_0_h2f_mpu_events_standbywfe>), //                          .standbywfe
 		.hps_0_h2f_mpu_events_standbywfi (<connected-to-hps_0_h2f_mpu_events_standbywfi>), //                          .standbywfi
+		.keys_export                     (<connected-to-keys_export>),                     //                      keys.export
 		.leds_export                     (<connected-to-leds_export>),                     //                      leds.export
 		.memory_mem_a                    (<connected-to-memory_mem_a>),                    //                    memory.mem_a
 		.memory_mem_ba                   (<connected-to-memory_mem_ba>),                   //                          .mem_ba
@@ -23,8 +24,7 @@
 		.memory_mem_odt                  (<connected-to-memory_mem_odt>),                  //                          .mem_odt
 		.memory_mem_dm                   (<connected-to-memory_mem_dm>),                   //                          .mem_dm
 		.memory_oct_rzqin                (<connected-to-memory_oct_rzqin>),                //                          .oct_rzqin
-		.keys_export                     (<connected-to-keys_export>),                     //                      keys.export
-		.sys_sdram_pll_0_ref_reset_reset (<connected-to-sys_sdram_pll_0_ref_reset_reset>), // sys_sdram_pll_0_ref_reset.reset
-		.reset_reset_n                   (<connected-to-reset_reset_n>)                    //                     reset.reset_n
+		.reset_reset_n                   (<connected-to-reset_reset_n>),                   //                     reset.reset_n
+		.sys_sdram_pll_0_ref_reset_reset (<connected-to-sys_sdram_pll_0_ref_reset_reset>)  // sys_sdram_pll_0_ref_reset.reset
 	);
 

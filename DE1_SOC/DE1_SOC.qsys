@@ -788,8 +788,8 @@
    kind="single_port_ram"
    version="1.0"
    enabled="1">
-  <parameter name="ADDR_WIDTH" value="6" />
-  <parameter name="DATA_WIDTH" value="8" />
+  <parameter name="ADDR_WIDTH" value="2" />
+  <parameter name="DATA_WIDTH" value="64" />
  </module>
  <module
    name="sys_sdram_pll_0"
@@ -811,18 +811,18 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_axi_master"
-   end="single_port_ram_0.avalon_slave_0">
+   end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x00020000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="18.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="jtag_uart_0.avalon_jtag_slave">
+   start="hps_0.h2f_axi_master"
+   end="single_port_ram_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00020000" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -870,11 +870,6 @@
    kind="clock"
    version="18.1"
    start="sys_sdram_pll_0.sdram_clk"
-   end="single_port_ram_0.clock" />
- <connection
-   kind="clock"
-   version="18.1"
-   start="sys_sdram_pll_0.sdram_clk"
    end="hps_0.f2h_sdram0_clock" />
  <connection
    kind="clock"
@@ -905,6 +900,11 @@
    kind="clock"
    version="18.1"
    start="sys_sdram_pll_0.sys_clk"
+   end="single_port_ram_0.clock" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="sys_sdram_pll_0.sys_clk"
    end="hps_0.f2h_axi_clock" />
  <connection
    kind="clock"
@@ -919,35 +919,33 @@
  <connection
    kind="reset"
    version="18.1"
-   start="clk_0.clk_reset"
-   end="jtag_uart_0.reset" />
- <connection
-   kind="reset"
-   version="18.1"
    start="hps_0.h2f_reset"
    end="jtag_uart_0.reset" />
- <connection kind="reset" version="18.1" start="hps_0.h2f_reset" end="KEYS.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="hps_0.h2f_reset"
-   end="single_port_ram_0.reset" />
- <connection kind="reset" version="18.1" start="hps_0.h2f_reset" end="LEDS.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="hps_0.h2f_reset"
-   end="HEX3_0.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="hps_0.h2f_reset"
-   end="HEX5_4.reset" />
  <connection
    kind="reset"
    version="18.1"
    start="sys_sdram_pll_0.reset_source"
-   end="jtag_uart_0.reset" />
+   end="single_port_ram_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="sys_sdram_pll_0.reset_source"
+   end="LEDS.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="sys_sdram_pll_0.reset_source"
+   end="HEX3_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="sys_sdram_pll_0.reset_source"
+   end="KEYS.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="sys_sdram_pll_0.reset_source"
+   end="HEX5_4.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

@@ -9,8 +9,7 @@
    <name preferredWidth="391" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Basic Functions,Library/Basic Functions/On Chip Memory,Library,Project" />
+ <library expandedCategories="Library,Project" />
  <window width="3872" height="2092" x="-16" y="-16" />
  <hdlexample language="VERILOG" />
 </preferences>

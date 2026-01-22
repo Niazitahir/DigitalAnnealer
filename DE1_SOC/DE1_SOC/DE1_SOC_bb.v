@@ -7,6 +7,7 @@ module DE1_SOC (
 	hps_0_h2f_mpu_events_evento,
 	hps_0_h2f_mpu_events_standbywfe,
 	hps_0_h2f_mpu_events_standbywfi,
+	keys_export,
 	leds_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -24,9 +25,8 @@ module DE1_SOC (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	keys_export,
-	sys_sdram_pll_0_ref_reset_reset,
-	reset_reset_n);	
+	reset_reset_n,
+	sys_sdram_pll_0_ref_reset_reset);	
 
 	input		clk_clk;
 	output	[31:0]	hex30_export;
@@ -35,6 +35,7 @@ module DE1_SOC (
 	output		hps_0_h2f_mpu_events_evento;
 	output	[1:0]	hps_0_h2f_mpu_events_standbywfe;
 	output	[1:0]	hps_0_h2f_mpu_events_standbywfi;
+	input	[3:0]	keys_export;
 	output	[9:0]	leds_export;
 	output	[12:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -52,7 +53,6 @@ module DE1_SOC (
 	output		memory_mem_odt;
 	output		memory_mem_dm;
 	input		memory_oct_rzqin;
-	input	[3:0]	keys_export;
-	input		sys_sdram_pll_0_ref_reset_reset;
 	input		reset_reset_n;
+	input		sys_sdram_pll_0_ref_reset_reset;
 endmodule

@@ -9,9 +9,10 @@
 #define HEAVY_BRIDGE_BASE 0xC0000000
 #define LIGHT_BRIDGE_BASE 0xFF200000
 #define SDRAM_BASE          0x01000000  // 16MB offset (safe zone)
-#define TEST_VALUE          0xACE12345
+#define TEST_VALUE          0xBCE12345
 #define SEQUENCER_RAM_BASE 0x20000
 #define RSTMGR_BRGMODRST 0xFFD05010
+#define TEST_2 0xBCE12345BCE12345
 // Function Prototypes
 void sdram_test(void);
 
@@ -65,4 +66,21 @@ void sdram_test(void) {
     } else {
         printf("Failure! Expected 0x%08X but read 0x%08X\n", TEST_VALUE, *read_backs);
     }
+    
+    //64bit test
+    volatile uint32_t *fpga_ptr2 = (volatile uint32_t *)HEAVY_BRIDGE_BASE;
+    printf("Writing to FPGA address 0x%08X...\n", (uint32_t)fpga_ptr2);
+    *fpga_ptr2 = TEST_VALUE;
+    fpga_ptr2[1] = TEST_VALUE;
+
+    // 2. Read back from memory
+    volatile uint32_t *read_backs2 = (volatile uint32_t *)HEAVY_BRIDGE_BASE;
+
+    printf("0x%08x%08x\n", *read_backs2, read_backs2[1]);
+    // // 3. Verify
+    // if (*read_backs2 == TEST_VALUE) {
+    //     printf("Success! Read value: 0x%016X\n", *read_backs2);
+    // } else {
+    //     printf("Failure! Expected 0x%016X but read 0x%016X\n", TEST_2, *read_backs2);
+    // }
 }
