@@ -79,7 +79,7 @@ module DE1_SOC (
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write;        // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_write -> jtag_uart_0:av_write_n
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata;    // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_writedata -> jtag_uart_0:av_writedata
 	wire  [63:0] mm_interconnect_0_single_port_ram_0_avalon_slave_0_readdata;  // single_port_ram_0:q -> mm_interconnect_0:single_port_ram_0_avalon_slave_0_readdata
-	wire   [1:0] mm_interconnect_0_single_port_ram_0_avalon_slave_0_address;   // mm_interconnect_0:single_port_ram_0_avalon_slave_0_address -> single_port_ram_0:addr
+	wire   [0:0] mm_interconnect_0_single_port_ram_0_avalon_slave_0_address;   // mm_interconnect_0:single_port_ram_0_avalon_slave_0_address -> single_port_ram_0:addr
 	wire         mm_interconnect_0_single_port_ram_0_avalon_slave_0_write;     // mm_interconnect_0:single_port_ram_0_avalon_slave_0_write -> single_port_ram_0:we
 	wire  [63:0] mm_interconnect_0_single_port_ram_0_avalon_slave_0_writedata; // mm_interconnect_0:single_port_ram_0_avalon_slave_0_writedata -> single_port_ram_0:data
 	wire   [1:0] hps_0_h2f_lw_axi_master_awburst;                              // hps_0:h2f_lw_AWBURST -> mm_interconnect_1:hps_0_h2f_lw_axi_master_awburst
@@ -373,7 +373,7 @@ module DE1_SOC (
 
 	single_port_ram #(
 		.DATA_WIDTH (64),
-		.ADDR_WIDTH (2)
+		.ADDR_WIDTH (1)
 	) single_port_ram_0 (
 		.data    (mm_interconnect_0_single_port_ram_0_avalon_slave_0_writedata), // avalon_slave_0.writedata
 		.addr    (mm_interconnect_0_single_port_ram_0_avalon_slave_0_address),   //               .address

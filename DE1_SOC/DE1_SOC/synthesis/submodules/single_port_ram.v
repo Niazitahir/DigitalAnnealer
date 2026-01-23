@@ -13,7 +13,7 @@
 //slower initialization in the beginning (moving data into SDRAM from the processor)
 
 module single_port_ram 
-#(parameter DATA_WIDTH=64, parameter ADDR_WIDTH=2)
+#(parameter DATA_WIDTH=64, parameter ADDR_WIDTH=1)
 (
 	input [(DATA_WIDTH-1):0] data,
 	input [(ADDR_WIDTH-1):0] addr,

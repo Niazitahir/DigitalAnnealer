@@ -53,7 +53,7 @@ module DE1_SOC_mm_interconnect_0 (
 		output wire [31:0] jtag_uart_0_avalon_jtag_slave_writedata,             //                                              .writedata
 		input  wire        jtag_uart_0_avalon_jtag_slave_waitrequest,           //                                              .waitrequest
 		output wire        jtag_uart_0_avalon_jtag_slave_chipselect,            //                                              .chipselect
-		output wire [1:0]  single_port_ram_0_avalon_slave_0_address,            //              single_port_ram_0_avalon_slave_0.address
+		output wire [0:0]  single_port_ram_0_avalon_slave_0_address,            //              single_port_ram_0_avalon_slave_0.address
 		output wire        single_port_ram_0_avalon_slave_0_write,              //                                              .write
 		input  wire [63:0] single_port_ram_0_avalon_slave_0_readdata,           //                                              .readdata
 		output wire [63:0] single_port_ram_0_avalon_slave_0_writedata           //                                              .writedata
@@ -351,7 +351,7 @@ module DE1_SOC_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (2),
+		.AV_ADDRESS_W                   (1),
 		.AV_DATA_W                      (64),
 		.UAV_DATA_W                     (64),
 		.AV_BURSTCOUNT_W                (1),
