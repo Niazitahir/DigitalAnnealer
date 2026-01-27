@@ -9,6 +9,62 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element DE1_SOC
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element DE1_SOC
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element DE1_SOC
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element DE1_SOC
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element DE1_SOC
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element DE1_SOC
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element DE1_SOC
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element HEX3_0
    {
       datum _sortIndex
@@ -54,6 +110,14 @@
          type = "int";
       }
    }
+   element KEYS.s1
+   {
+      datum baseAddress
+      {
+         value = "262144";
+         type = "String";
+      }
+   }
    element LEDS
    {
       datum _sortIndex
@@ -75,6 +139,14 @@
       datum _sortIndex
       {
          value = "0";
+         type = "int";
+      }
+   }
+   element dma_0
+   {
+      datum _sortIndex
+      {
+         value = "9";
          type = "int";
       }
    }
@@ -102,12 +174,36 @@
          type = "String";
       }
    }
+   element rs232_0
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
+   }
+   element rs232_0.avalon_rs232_slave
+   {
+      datum baseAddress
+      {
+         value = "327680";
+         type = "String";
+      }
+   }
    element single_port_ram_0
    {
       datum _sortIndex
       {
          value = "4";
          type = "int";
+      }
+   }
+   element single_port_ram_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "805306368";
+         type = "String";
       }
    }
    element sys_sdram_pll_0
@@ -167,6 +263,11 @@
    dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="rs232_if"
+   internal="rs232_0.external_interface"
+   type="conduit"
+   dir="end" />
  <interface
    name="sys_sdram_pll_0_ref_reset"
    internal="sys_sdram_pll_0.ref_reset"
@@ -233,6 +334,27 @@
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module name="dma_0" kind="altera_avalon_dma" version="18.1" enabled="1">
+  <parameter name="allowByteTransactions" value="true" />
+  <parameter name="allowDoubleWordTransactions" value="true" />
+  <parameter name="allowHalfWordTransactions" value="true" />
+  <parameter name="allowQuadWordTransactions" value="true" />
+  <parameter name="allowWordTransactions" value="true" />
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="bigEndian" value="false" />
+  <parameter name="burstEnable" value="true" />
+  <parameter name="fifoDepth" value="64" />
+  <parameter name="maxBurstSize" value="8" />
+  <parameter name="minimumDmaTransactionRegisterWidth" value="13" />
+  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='hps_0_bridges.f2h_sdram0_data' start='0x0' end='0x100000000' /></address-map>]]></parameter>
+  <parameter name="readSlaveAddressWidthMax" value="32" />
+  <parameter name="readSlaveDataWidthMax" value="64" />
+  <parameter name="softresetEnable" value="true" />
+  <parameter name="useRegistersForFIFO" value="false" />
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='single_port_ram_0.avalon_slave_0' start='0x30000000' end='0x34000000' /></address-map>]]></parameter>
+  <parameter name="writeSlaveAddressWidthMax" value="30" />
+  <parameter name="writeSlaveDataWidthMax" value="32" />
  </module>
  <module name="hps_0" kind="altera_hps" version="18.1" enabled="1">
   <parameter name="ABSTRACT_REAL_COMPARE_TEST" value="false" />
@@ -784,12 +906,26 @@
   <parameter name="writeIRQThreshold" value="8" />
  </module>
  <module
+   name="rs232_0"
+   kind="altera_up_avalon_rs232"
+   version="17.1"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="avalon_bus_type" value="Memory Mapped" />
+  <parameter name="baud" value="115200" />
+  <parameter name="data_bits" value="8" />
+  <parameter name="parity" value="None" />
+  <parameter name="stop_bits" value="1" />
+ </module>
+ <module
    name="single_port_ram_0"
    kind="single_port_ram"
    version="1.0"
    enabled="1">
-  <parameter name="ADDR_WIDTH" value="1" />
-  <parameter name="DATA_WIDTH" value="64" />
+  <parameter name="ADDR_WIDTH" value="4" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="DMA_ADDR_WIDTH" value="24" />
  </module>
  <module
    name="sys_sdram_pll_0"
@@ -821,6 +957,24 @@
    version="18.1"
    start="hps_0.h2f_axi_master"
    end="single_port_ram_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x30000000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="rs232_0.avalon_rs232_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00050000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="dma_0.control_port_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -858,7 +1012,25 @@
    start="hps_0.h2f_lw_axi_master"
    end="KEYS.s1">
   <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="dma_0.read_master"
+   end="hps_0.f2h_sdram0_data">
+  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="dma_0.write_master"
+   end="single_port_ram_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x30000000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -896,6 +1068,16 @@
    version="18.1"
    start="sys_sdram_pll_0.sys_clk"
    end="KEYS.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="sys_sdram_pll_0.sys_clk"
+   end="dma_0.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="sys_sdram_pll_0.sys_clk"
+   end="rs232_0.clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -946,6 +1128,16 @@
    version="18.1"
    start="sys_sdram_pll_0.reset_source"
    end="HEX5_4.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="sys_sdram_pll_0.reset_source"
+   end="dma_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="sys_sdram_pll_0.reset_source"
+   end="rs232_0.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

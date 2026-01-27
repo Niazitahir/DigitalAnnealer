@@ -42,10 +42,12 @@ module DE1_SOCTop(
       output      [9:0]  LEDR,
 
       ///////// SW /////////
-      input       [9:0]  SW
-		
+      input       [9:0]  SW,
+
 
 		////////  Debug  ////////
+		output wire rs232_if_txd,
+		input  wire rs232_if_rxd
 );
 
     DE1_SOC u0 (
@@ -65,12 +67,12 @@ module DE1_SOCTop(
         .memory_mem_dqs_n                      ( HPS_DDR3_DQS_N),                      //                .mem_dqs_n
         .memory_mem_odt                        ( HPS_DDR3_ODT),                        //                .mem_odt
         .memory_mem_dm                         ( HPS_DDR3_DM),                         //                .mem_dm
-        .memory_oct_rzqin                      ( HPS_DDR3_RZQ)                      //                .oct_rzqi
-		
+        .memory_oct_rzqin                      ( HPS_DDR3_RZQ),                      //                .oct_rzqi
+		  .rs232_if_RXD                    (rs232_if_txd),                    //                  rs232_if.RXD
+        .rs232_if_TXD                    (rs232_if_rxd)                     //                          .TXD
 	 );
 	single_port_ram u1(
-		.clk												  (CLOCK_50),
-		.leds												  (LEDR)
+		.clk												  (CLOCK_50)
 	);
 
 

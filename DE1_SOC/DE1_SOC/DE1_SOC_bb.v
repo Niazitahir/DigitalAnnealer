@@ -26,7 +26,9 @@ module DE1_SOC (
 	memory_mem_dm,
 	memory_oct_rzqin,
 	reset_reset_n,
-	sys_sdram_pll_0_ref_reset_reset);	
+	sys_sdram_pll_0_ref_reset_reset,
+	rs232_if_RXD,
+	rs232_if_TXD);	
 
 	input		clk_clk;
 	output	[31:0]	hex30_export;
@@ -55,4 +57,6 @@ module DE1_SOC (
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
 	input		sys_sdram_pll_0_ref_reset_reset;
+	input		rs232_if_RXD;
+	output		rs232_if_TXD;
 endmodule

@@ -1,86 +1,75 @@
 #include <stdint.h>
-#include <stdio.h>
 
+#define UART0_BASE  0xFFC02000
 
-/* * PHYSICAL ADDRESS MAP
- * 0x0000_0000 to 0x3FFF_FFFF: HPS DDR3 SDRAM (Up to 1GB)
- * 0xFFFF_0000 to 0xFFFF_FFFF: On-Chip RAM (64KB)
- */
-#define HEAVY_BRIDGE_BASE 0xC0000000
-#define LIGHT_BRIDGE_BASE 0xFF200000
-#define SDRAM_BASE          0x01000000  // 16MB offset (safe zone)
-#define TEST_VALUE          0xBCE12345
-#define SEQUENCER_RAM_BASE 0x20000
-#define RSTMGR_BRGMODRST 0xFFD05010
-#define TEST_2 0xBCE12345BCE12345
-// Function Prototypes
-void sdram_test(void);
+#define UART_DR     (*(volatile uint32_t *)(UART0_BASE + 0x00))
+#define UART_FR     (*(volatile uint32_t *)(UART0_BASE + 0x18))
+#define UART_IBRD   (*(volatile uint32_t *)(UART0_BASE + 0x24))
+#define UART_FBRD   (*(volatile uint32_t *)(UART0_BASE + 0x28))
+#define UART_LCRH   (*(volatile uint32_t *)(UART0_BASE + 0x2C))
+#define UART_CR     (*(volatile uint32_t *)(UART0_BASE + 0x30))
+#define UART_IMSC   (*(volatile uint32_t *)(UART0_BASE + 0x38))
 
-int main(void) {
-    // Note: In baremetal, your UART must be initialized to see printf output.
-    // This is usually handled by the Preloader/Pre-Main startup code.
-    
-    printf("--- HPS Baremetal SDRAM Test ---\n");
-    
-    sdram_test();
+#define CLK_MGR_BASE      0xFFD04000
+#define CLK_MGR_PER_EN    (*(volatile uint32_t *)(CLK_MGR_BASE + 0xA4))
 
-    while(1); // Infinite loop to prevent processor runaway
-    return 0;
+void enable_uart0_clock(void)
+{
+    CLK_MGR_PER_EN |= (1 << 16);  // UART0 clock enable
 }
 
-void sdram_test(void) {
-    // Pointer to the Reset Manager Bridge Mode Reset Register
-    volatile int * rst_mgr_ptr = (volatile int *) RSTMGR_BRGMODRST;
+void uart_init(void)
+{
+    enable_uart0_clock();
 
-    // Clear bits 0, 1, and 2 to release all bridges from reset
-    // This allows reset_n to go HIGH (1) in your Verilog
-    *rst_mgr_ptr = 0;
-    // Create a volatile pointer to ensure the compiler doesn't optimize out the access
-    volatile uint32_t *sdram_ptr = (volatile uint32_t *)SDRAM_BASE;
+    UART_CR = 0x0;   // Disable UART
 
-    // 1. Write to memory
-    printf("Writing to physical address 0x%08X...\n", (uint32_t)sdram_ptr);
-    *sdram_ptr = TEST_VALUE;
+    /*
+     * Baud rate calculation:
+     * BaudDiv = UARTCLK / (16 * Baud)
+     * UARTCLK ≈ 100 MHz
+     *
+     * IBRD = 54
+     * FBRD = 16
+     */
 
-    // 2. Read back from memory
-    uint32_t read_back = *sdram_ptr;
+    UART_IBRD = 54;
+    UART_FBRD = 16;
 
-    // 3. Verify
-    if (read_back == TEST_VALUE) {
-        printf("Success! Read value: 0x%08X\n", read_back);
-    } else {
-        printf("Failure! Expected 0x%08X but read 0x%08X\n", TEST_VALUE, read_back);
+    // 8-bit, no parity, 1 stop bit, FIFO enabled
+    UART_LCRH = (3 << 5) | (1 << 4);
+
+    // Mask all interrupts
+    UART_IMSC = 0x0;
+
+    // Enable UART, TX, RX
+    UART_CR = (1 << 9) | (1 << 8) | (1 << 0);
+}
+
+void uart_putc(char c)
+{
+    while (UART_FR & (1 << 5));  // TX FIFO full
+    UART_DR = c;
+}
+
+char uart_getc(void)
+{
+    while (UART_FR & (1 << 4));  // RX FIFO empty
+    return (char)(UART_DR & 0xFF);
+}
+
+int main(void)
+{
+    uart_init();
+
+    const char *msg = "Hello from bare-metal HPS UART!\r\n";
+    while (*msg)
+        uart_putc(*msg++);
+
+    // Echo loop
+    while (1)
+    {
+        char c = uart_getc();
+        uart_putc(c);
     }
-
-    volatile uint32_t *fpga_ptr = (volatile uint32_t *)HEAVY_BRIDGE_BASE;
-    printf("Writing to FPGA address 0x%08X...\n", (uint32_t)fpga_ptr);
-    *fpga_ptr = TEST_VALUE;
-
-    // 2. Read back from memory
-    volatile uint32_t *read_backs = (volatile uint32_t *)HEAVY_BRIDGE_BASE;
-
-
-    // 3. Verify
-    if (*read_backs == TEST_VALUE) {
-        printf("Success! Read value: 0x%08X\n", *read_backs);
-    } else {
-        printf("Failure! Expected 0x%08X but read 0x%08X\n", TEST_VALUE, *read_backs);
-    }
-    
-    //64bit test
-    volatile uint32_t *fpga_ptr2 = (volatile uint32_t *)HEAVY_BRIDGE_BASE;
-    printf("Writing to FPGA address 0x%08X...\n", (uint32_t)fpga_ptr2);
-    *fpga_ptr2 = TEST_VALUE;
-    fpga_ptr2[1] = TEST_VALUE;
-
-    // 2. Read back from memory
-    volatile uint32_t *read_backs2 = (volatile uint32_t *)HEAVY_BRIDGE_BASE;
-
-    printf("0x%08x%08x\n", *read_backs2, read_backs2[1]);
-    // // 3. Verify
-    // if (*read_backs2 == TEST_VALUE) {
-    //     printf("Success! Read value: 0x%016X\n", *read_backs2);
-    // } else {
-    //     printf("Failure! Expected 0x%016X but read 0x%016X\n", TEST_2, *read_backs2);
-    // }
 }

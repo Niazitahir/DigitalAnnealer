@@ -25,6 +25,8 @@
 		.memory_mem_dm                   (<connected-to-memory_mem_dm>),                   //                          .mem_dm
 		.memory_oct_rzqin                (<connected-to-memory_oct_rzqin>),                //                          .oct_rzqin
 		.reset_reset_n                   (<connected-to-reset_reset_n>),                   //                     reset.reset_n
-		.sys_sdram_pll_0_ref_reset_reset (<connected-to-sys_sdram_pll_0_ref_reset_reset>)  // sys_sdram_pll_0_ref_reset.reset
+		.sys_sdram_pll_0_ref_reset_reset (<connected-to-sys_sdram_pll_0_ref_reset_reset>), // sys_sdram_pll_0_ref_reset.reset
+		.rs232_if_RXD                    (<connected-to-rs232_if_RXD>),                    //                  rs232_if.RXD
+		.rs232_if_TXD                    (<connected-to-rs232_if_TXD>)                     //                          .TXD
 	);
 

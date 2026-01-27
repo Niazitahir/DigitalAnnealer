@@ -26,7 +26,9 @@
 			memory_mem_dm                   : out   std_logic;                                        -- mem_dm
 			memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
 			reset_reset_n                   : in    std_logic                     := 'X';             -- reset_n
-			sys_sdram_pll_0_ref_reset_reset : in    std_logic                     := 'X'              -- reset
+			sys_sdram_pll_0_ref_reset_reset : in    std_logic                     := 'X';             -- reset
+			rs232_if_RXD                    : in    std_logic                     := 'X';             -- RXD
+			rs232_if_TXD                    : out   std_logic                                         -- TXD
 		);
 	end component DE1_SOC;
 
@@ -58,6 +60,8 @@
 			memory_mem_dm                   => CONNECTED_TO_memory_mem_dm,                   --                          .mem_dm
 			memory_oct_rzqin                => CONNECTED_TO_memory_oct_rzqin,                --                          .oct_rzqin
 			reset_reset_n                   => CONNECTED_TO_reset_reset_n,                   --                     reset.reset_n
-			sys_sdram_pll_0_ref_reset_reset => CONNECTED_TO_sys_sdram_pll_0_ref_reset_reset  -- sys_sdram_pll_0_ref_reset.reset
+			sys_sdram_pll_0_ref_reset_reset => CONNECTED_TO_sys_sdram_pll_0_ref_reset_reset, -- sys_sdram_pll_0_ref_reset.reset
+			rs232_if_RXD                    => CONNECTED_TO_rs232_if_RXD,                    --                  rs232_if.RXD
+			rs232_if_TXD                    => CONNECTED_TO_rs232_if_TXD                     --                          .TXD
 		);
 

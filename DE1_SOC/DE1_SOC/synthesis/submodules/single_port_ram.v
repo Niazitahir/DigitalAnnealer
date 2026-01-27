@@ -13,41 +13,57 @@
 //slower initialization in the beginning (moving data into SDRAM from the processor)
 
 module single_port_ram 
-#(parameter DATA_WIDTH=64, parameter ADDR_WIDTH=1)
+#(parameter DATA_WIDTH=32, parameter DMA_ADDR_WIDTH=24, parameter ADDR_WIDTH=4)
 (
 	input [(DATA_WIDTH-1):0] data,
-	input [(ADDR_WIDTH-1):0] addr,
-	input we, clk, reset_n,
-	output [(DATA_WIDTH-1):0] q,
-	output reg [9:0] leds,
-	output [31:0] hex0,
-	output [15:0] hex1
+	input [(DMA_ADDR_WIDTH-1):0] addr,
+	input wire read, 
+	input we, clk, reset_n, burstcount,
+	input  wire [3:0] byteenable,
+
+	output reg [(DATA_WIDTH-1):0] q,
+	output wire waitrequest,
+	output reg readdatavalid
 );
-	reg [9:0] led_arr;
-	// Declare the RAM variable
-	reg [DATA_WIDTH-1:0] ram[2**ADDR_WIDTH-1:0];
+
+	wire [ADDR_WIDTH-1:0] word_addr = addr[ADDR_WIDTH+1:2];
+	localparam DEPTH = 1 << ADDR_WIDTH;
 
 	// Variable to hold the registered read address
-	reg [ADDR_WIDTH-1:0] addr_reg;
-
+	reg [DMA_ADDR_WIDTH-1:0] addr_reg;
+	
+	reg [DATA_WIDTH-1:0] mem [0:15];
+	reg valid;
+	
+	
+	assign waitrequest = 1'b0;
+	
 	always @ (posedge clk or negedge reset_n)
 	begin
-		
 		if (!reset_n) begin
-			addr_reg <= {ADDR_WIDTH{1'b0}};
-			leds <= {10'b1111111111};
+			addr_reg <= {DMA_ADDR_WIDTH{1'b0}};
 		end
 		// Write
 		else begin
-		   //led_arr <= {10'b1100000000};
 			if (we) begin
-				leds <= {10'b1100000111};
-				ram[addr] <= data;
-			addr_reg <= addr;
+				mem[word_addr] <= data;
+				valid <= 1'b0;
+				addr_reg <= addr;
 			end
+			readdatavalid <= 1'b1;
+			q<=mem[0];
 		end
+
 	end
-	assign q = ram[addr_reg];
+//	always @ (*) begin
+//		case (addr)
+//			0: q = reg0; // Select input 'a'
+//			4: q = reg1; // Select input 'b'
+//			8: q = reg2; // Select input 'c'
+//			12: q = load; // Select input 'd'
+//			default:  q = 1'b1; // Default case
+//		endcase
+//	end
 	// Continuous assignment implies read returns NEW data.
 	// This is the natural behavior of the TriMatrix memory
 	// blocks in Single Port mode.  

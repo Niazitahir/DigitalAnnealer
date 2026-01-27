@@ -1,5 +1,5 @@
 module requester_adb
-#(parameter num_engines=10)
+#(parameter num_engines=10, DATA_WIDTH=96, parameter ADDR_WIDTH=1)
 (		
 		//axi variables
 		input [(DATA_WIDTH-1):0] data,

@@ -3,13 +3,15 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="159" />
+   <connections preferredWidth="191" />
    <irq preferredWidth="34" />
    <export preferredWidth="591" />
    <name preferredWidth="391" />
+   <description preferredWidth="628" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
+ <library
+   expandedCategories="Library/University Program,Library/Interface Protocols,Library,Library/Interface Protocols/Serial,Library/University Program/Communications,Project" />
  <window width="3872" height="2092" x="-16" y="-16" />
  <hdlexample language="VERILOG" />
 </preferences>

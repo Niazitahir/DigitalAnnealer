@@ -26,6 +26,8 @@
 			memory_mem_dm                   : out   std_logic;                                        -- mem_dm
 			memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
 			reset_reset_n                   : in    std_logic                     := 'X';             -- reset_n
+			rs232_if_RXD                    : in    std_logic                     := 'X';             -- RXD
+			rs232_if_TXD                    : out   std_logic;                                        -- TXD
 			sys_sdram_pll_0_ref_reset_reset : in    std_logic                     := 'X'              -- reset
 		);
 	end component DE1_SOC;
